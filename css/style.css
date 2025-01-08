@@ -561,3 +561,110 @@ nav ul li a {
   pointer-events: none; /* Prevent interaction with blurred content */
   transition: filter 0.3s ease-in-out; /* Smooth transition for blur */
 }
+
+
+/* Responsive Design for Phones */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  #header .header-content h1 {
+    font-size: 28px;
+  }
+
+  #header .header-content p {
+    font-size: 12px;
+  }
+
+  .about-descr {
+    text-align: center;
+    padding: 20px;
+  }
+
+  #about .div-img-bg .about-img img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .services-block span {
+    font-size: 12px;
+  }
+
+  .services-block i {
+    font-size: 36px;
+  }
+
+  .about-descr .socials-media ul {
+    gap: 20px;
+    justify-content: center; /* Center icons on smaller screens */
+  }
+
+  .socials-media i {
+    font-size: 2rem; /* Adjust icon size */
+  }
+
+  /* Navigation Menu */
+  nav ul {
+    display: none; /* Hide default menu */
+  }
+
+  .responsive {
+    display: block; /* Show mobile menu icon */
+  }
+
+  nav ul li {
+    display: block; /* Stack menu items vertically */
+    margin: 10px 0;
+  }
+
+  #services {
+    padding-bottom: 50px;
+  }
+
+  /* Adjust content padding */
+  .paddsection {
+    padding: 50px 20px;
+  }
+
+  .paddsections {
+    padding: 50px 20px !important;
+  }
+}
+
+/* Extra small screens (max-width: 576px) */
+@media only screen and (max-width: 576px) {
+  .header-content h1 {
+    font-size: 22px;
+  }
+
+  .header-content p {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .about-descr .p-heading {
+    font-size: 20px;
+  }
+
+  #about .div-img-bg .about-img img {
+    max-height: 200px;
+  }
+
+  .services-block span {
+    font-size: 10px;
+  }
+
+  .services-block i {
+    font-size: 30px;
+  }
+
+  .socials-media i {
+    font-size: 1.8rem;
+  }
+
+  .about-descr {
+    padding: 10px;
+  }
+}
