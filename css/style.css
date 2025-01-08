@@ -561,3 +561,196 @@ nav ul li a {
   pointer-events: none; /* Prevent interaction with blurred content */
   transition: filter 0.3s ease-in-out; /* Smooth transition for blur */
 }
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+  /* Navbar */
+  #main-nav .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #main-nav .nav-menu li {
+    margin-bottom: 10px;
+  }
+
+  /* About Section */
+  #about .about-img {
+    margin: 0 auto;
+    width: 80%; /* Make the image fit nicely */
+    max-width: 300px;
+  }
+
+  #about .about-descr {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #about .socials-media ul {
+    justify-content: center;
+  }
+
+  /* Services Section */
+  #services .services-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #services .services-block {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* Portfolio Section */
+  #portfolio .portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #portfolio .portfolio-thumbnail {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #portfolio img {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  /* Footer and Links */
+  #portfolio .portfolio-github-link {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile-first styles (max-width 480px) */
+@media (max-width: 480px) {
+  /* General */
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: hidden; /* Avoid horizontal scrolling */
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  h1, h2, h3, h4 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* About Section */
+  #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #about .about-img {
+    width: 70%;
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+
+  #about .about-descr {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  /* Social Media Carousel */
+  #about .socials-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  #about .socials-carousel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for a clean look */
+  }
+
+  #about .socials-carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    background: #f1f1f1;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  #about .socials-carousel-item a {
+    font-size: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  /* Projects Carousel */
+  #portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #portfolio .projects-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  #portfolio .projects-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  #portfolio .projects-carousel-item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  #portfolio .projects-carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  #portfolio .projects-carousel-item .project-title {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  #portfolio .projects-carousel-item .project-description {
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+    background: #f8f9fa;
+  }
+}
