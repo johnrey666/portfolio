@@ -1,3 +1,1 @@
-### 🐍 GitHub Activity Snake
-
-![GitHub Snake Animation](https://raw.githubusercontent.com/johnrey666/johnrey666/output/github-snake.svg)
+![snake animation](https://github.com/<johnrey666>/<johnrey666>/blob/output/github-contribution-grid-snake2.svg)
