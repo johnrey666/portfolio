@@ -3,80 +3,103 @@ $(document).ready(function() {
 
   'use strict';
 
- 
-
   // ========================================================================= //
   //  Typed Js
   // ========================================================================= //
-
-
+  // Note: No Typed.js implementation in original code, kept as comment
 
   // ========================================================================= //
   //  Owl Carousel Services
   // ========================================================================= //
-
-
   $('.services-carousel').owlCarousel({
-      
-
-      margin: 20,
-      dots: false,
-      nav: false,
-
-      responsive: { 0: { items: 1 }, 768: { items: 2 }, 900: { items: 3 } }
-    });
+    margin: 15,
+    dots: true,
+    nav: true,
+    navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
+    responsive: {
+      0: { items: 1, margin: 10 },
+      576: { items: 2, margin: 10 },
+      768: { items: 2 },
+      992: { items: 3 }
+    }
+  });
 
   // ========================================================================= //
   //  magnificPopup
   // ========================================================================= //
-
-  var magnifPopup = function() {
-    $('.popup-img').magnificPopup({
+  var magnifPopup = function(selector) {
+    $(selector).find('.popup-img').magnificPopup({
       type: 'image',
       removalDelay: 300,
-      mainClass: 'mfp-with-zoom',
+      mainClass: 'mfp-with-zoom mfp-img-mobile',
       gallery: {
-        enabled: true
+        enabled: true,
+        navigateByImgClick: true
       },
       zoom: {
-        enabled: true, // By default it's false, so don't forget to enable it
-
-        duration: 300, // duration of the effect, in milliseconds
-        easing: 'ease-in-out', // CSS transition easing function
-
-        // The "opener" function should return the element from which popup will be zoomed in
-        // and to which popup will be scaled down
-        // By defailt it looks for an image tag:
+        enabled: true,
+        duration: 300,
+        easing: 'ease-in-out',
         opener: function(openerElement) {
-          // openerElement is the element on which popup was initialized, in this case its <a> tag
-          // you don't need to add "opener" option if this code matches your needs, it's defailt one.
           return openerElement.is('img') ? openerElement : openerElement.find('img');
         }
+      },
+      image: {
+        verticalFit: true // Ensure images fit within viewport on mobile
       }
     });
   };
 
-
-  // Call the functions
-  magnifPopup();
+  // Call Magnific Popup for both grid and carousel
+  magnifPopup('.portfolio-container');
+  magnifPopup('.portfolio-carousel');
 
 });
 
 // ========================================================================= //
 //  Portfolio isotope and filter
-// ========================================================================= //
-// ========================================================================= //
-//  Portfolio isotope and filter
-// ========================================================================= //
+  // ========================================================================= //
 $(window).on('load', function() {
-  // Initialize isotope
+  // Initialize isotope for grid (desktop)
   var portfolioIsotope = $('.portfolio-container').isotope({
     itemSelector: '.portfolio-thumbnail',
     layoutMode: 'fitRows'
   });
 
+  // Initialize portfolio carousel for mobile
+  if ($(window).width() <= 767) {
+    $('.portfolio-carousel').owlCarousel({
+      margin: 10,
+      dots: true,
+      nav: true,
+      navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
+      items: 1
+    });
+  }
+
+  // Handle window resize to initialize/destroy carousel
+  $(window).on('resize', function() {
+    if ($(window).width() <= 767) {
+      if (!$('.portfolio-carousel').hasClass('owl-loaded')) {
+        $('.portfolio-carousel').owlCarousel({
+          margin: 10,
+          dots: true,
+          nav: true,
+          navText: ['<i class="ion-ios-arrow-left"></i>', '<i class="ion-ios-arrow-right"></i>'],
+          items: 1
+        });
+        magnifPopup('.portfolio-carousel');
+      }
+    } else {
+      $('.portfolio-carousel').owlCarousel('destroy');
+      magnifPopup('.portfolio-carousel'); // Reinitialize Magnific Popup after destroy
+    }
+  });
+
   // Set the default filter to '.seniorcare' immediately
   portfolioIsotope.isotope({ filter: '.seniorcare' });
+  $('.portfolio-carousel').find('.portfolio-item').hide();
+  $('.portfolio-carousel').find('.seniorcare').show();
 
   // Set 'seniorcare' as the active filter in the navigation
   $("#portfolio-flters li").removeClass('filter-active');
@@ -90,24 +113,42 @@ $(window).on('load', function() {
     var selectedFilter = $(this).data('filter');
     portfolioIsotope.isotope({ filter: selectedFilter });
 
-    // Update the lightbox items dynamically
+    // Update carousel visibility
+    $('.portfolio-carousel').find('.portfolio-item').hide();
+    $('.portfolio-carousel').find(selectedFilter).show();
+    $('.portfolio-carousel').trigger('refresh.owl.carousel');
+
+    // Update lightbox for filtered items
     updateLightbox(selectedFilter);
   });
 
   // Function to update lightbox items
   function updateLightbox(filter) {
     var filteredItems = $('.portfolio-container').find(filter);
+    var carouselItems = $('.portfolio-carousel').find(filter);
 
-    // Destroy the current lightbox instance if needed
+    // Destroy current lightbox instances
     if ($.fn.magnificPopup) {
-      $.magnificPopup.close(); // Close any open popup
+      $.magnificPopup.close();
     }
 
-    // Reinitialize the lightbox with the filtered items
-    filteredItems.find('a.popup-img').magnificPopup({
+    // Reinitialize lightbox for grid and carousel
+    filteredItems.find('.popup-img').magnificPopup({
       type: 'image',
       gallery: {
         enabled: true
+      },
+      image: {
+        verticalFit: true
+      }
+    });
+    carouselItems.find('.popup-img').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true
+      },
+      image: {
+        verticalFit: true
       }
     });
   }
@@ -116,23 +157,24 @@ $(window).on('load', function() {
   updateLightbox('.seniorcare');
 });
 
-
-// Get elements
+// ========================================================================= //
+//  Resume Modal
+// ========================================================================= //
 const resumeButton = document.getElementById("resumeButton");
 const resumeModal = document.getElementById("resumeModal");
 const closeModal = document.querySelector(".close");
-const body = document.body; // Reference to the body for adding classes
+const body = document.body;
 
 // Open modal with background blur
 resumeButton.addEventListener("click", () => {
-  resumeModal.classList.add("show"); // Show the modal
-  body.classList.add("body-blur"); // Add blur effect to background
+  resumeModal.classList.add("show");
+  body.classList.add("body-blur");
 });
 
 // Close modal and remove blur
 closeModal.addEventListener("click", () => {
-  resumeModal.classList.remove("show"); // Hide the modal
-  body.classList.remove("body-blur"); // Remove blur effect
+  resumeModal.classList.remove("show");
+  body.classList.remove("body-blur");
 });
 
 // Close modal when clicking outside the image
@@ -143,23 +185,36 @@ window.addEventListener("click", (event) => {
   }
 });
 
+// Add touch support for mobile
+resumeModal.addEventListener("touchstart", (event) => {
+  if (event.target === resumeModal) {
+    resumeModal.classList.remove("show");
+    body.classList.remove("body-blur");
+  }
+});
 
+// ========================================================================= //
+//  GitHub Links
+// ========================================================================= //
 function showGithub(project) {
   let githubLink = '';
 
   if (project === 'seniorcare') {
-    githubLink = 'https://github.com/yourusername/seniorcare-connect';  // Replace with actual link
+    githubLink = 'https://github.com/johnrey666/seniorcare.git';  
   } else if (project === 'mailah') {
-    githubLink = 'https://github.com/yourusername/mailah-lite';  // Replace with actual link
+    githubLink = 'https://github.com/johnrey666/dado_firebase.git'; 
   } else if (project === 'dental') {
-    githubLink = 'https://github.com/yourusername/creative-dental';  // Replace with actual link
+    githubLink = 'https://github.com/johnrey666/creative_dental.git';  
   }
 
-  // Inject the GitHub link into the page
-  document.getElementById('github-link').innerHTML = `
-    <h3>Check out the GitHub Repository for ${capitalizeFirstLetter(project)}:</h3>
-    <a href="${githubLink}" target="_blank" class="btn btn-primary">View GitHub</a>
-  `;
+  // Check if github-link element exists before updating
+  const githubLinkDiv = document.getElementById('github-link');
+  if (githubLinkDiv) {
+    githubLinkDiv.innerHTML = `
+      <h3>Check out the GitHub Repository for ${capitalizeFirstLetter(project)}:</h3>
+      <a href="${githubLink}" target="_blank" class="btn btn-primary">View GitHub</a>
+    `;
+  }
 }
 
 // Capitalize the first letter of the project name for proper display

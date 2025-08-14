@@ -1,14 +1,3 @@
-
-/*
-  Theme Name: Folio
-  Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-  Author: BootstrapMade.com
-  Author URL: https://bootstrapmade.com
-*/
-
-/*  General Styling
-/*-----------------------------------------------------------------------------------*/
-
 body {
   background: #ffffff;
   color: #898989;
@@ -30,50 +19,44 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
-/* Social Media Links in About Section */
+
 .about-descr .socials-media {
-  margin-top: 40px; /* Adds spacing above the social icons */
+  margin-top: 40px;
 }
 
 .about-descr .socials-media ul {
-  display: flex; /* Align items in a row */
-  justify-content: left; /* Center the row horizontally */
-  gap: 50px; /* Increased spacing between icons */
-  list-style: none; /* Remove default list styling */
-  padding: 0; /* Remove padding for clean alignment */
-  margin: 0; /* Remove margin for clean alignment */
+  display: flex;
+  justify-content: left;
+  gap: 50px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .about-descr .socials-media li {
-  display: inline-block; /* Keep list items inline */
+  display: inline-block;
 }
 
 .about-descr .socials-media i {
-  font-size: 2.5rem; /* Increase icon size for better visibility */
-  color: #6c6d6e; /* Customize icon color (light blue theme) */
-  transition: transform 0.3s, color 0.3s; /* Smooth hover effects */
+  font-size: 2.5rem;
+  color: #6c6d6e;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .about-descr .socials-media i:hover {
-  transform: scale(1.3); /* Slightly enlarge icon on hover */
-  color: #919497; /* Darken the color on hover */
+  transform: scale(1.3);
+  color: #919497;
 }
 
-/* Ensures section alignment is visually appealing */
 .about-descr {
-  text-align: center; /* Center text and icons horizontally */
+  text-align: center;
 }
 
-.ion-social-android-outline::before{
+.ion-social-android-outline::before,
+.ion-ios-browsers-outline:before,
+.ion-ios-color-wand-outline:before {
   color: rgb(93, 92, 92);
 }
-.ion-ios-browsers-outline:before{
-  color: rgb(93, 92, 92);
-}
-.ion-ios-color-wand-outline:before{
-  color: rgb(93, 92, 92);
-}
-
 
 h2 {
   color: #292929;
@@ -215,19 +198,16 @@ p {
 .mb-30 {
   margin-bottom: 30px;
 }
+
 #resumeButton:hover {
-  background-color: grey; /* Grey background on hover */
-  color: white; /* White text color on hover */
-  border-color: grey; /* Match border to background */
+  background-color: grey;
+  color: white;
+  border-color: grey;
 }
 
 #resumeButton {
   float: left;
 }
-
-/*-----------------------------------------------------------------------------------*/
-/*  Navbar Top
-/*-----------------------------------------------------------------------------------*/
 
 nav {
   position: fixed;
@@ -274,7 +254,6 @@ nav ul li a {
   float: left;
 }
 
-
 .responsive {
   display: none;
   font-size: 23px;
@@ -283,54 +262,6 @@ nav ul li a {
 .active {
   color: #afafaf;
 }
-
-/*----------------------------------------------------------------------------------*/
-/*  Header
-/*-----------------------------------------------------------------------------------*/
-
-
-
-
-#header .header-content {
-  height: 100vh;
-  text-align: left;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.header-content h1 {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.header-content p {
-  font-size: 13px;
-  letter-spacing: 5px;
-  margin-top: 0;
-  margin-bottom: 30px;
-  text-transform: capitalize;
-  color: #fff;
-  font-weight: 500;
-}
-
-.header-content .list-social li {
-  float: left;
-  margin-right: 20px;
-}
-
-.header-content .list-social li i {
-  color: #fff;
-  font-size: 15px;
-}
-
-/*-----------------------------------------------------------------------------------*/
-/*  Aout-us
-/*-----------------------------------------------------------------------------------*/
 
 #about {
   width: 100%;
@@ -341,7 +272,6 @@ nav ul li a {
 }
 
 #about .div-img-bg {
-
   border: 3px solid #777777;
 }
 
@@ -351,7 +281,6 @@ nav ul li a {
   height: 400px;
   object-fit: cover;
   border: 2px solid #777777;
-  
 }
 
 #about .about-descr .p-heading {
@@ -366,10 +295,6 @@ nav ul li a {
   text-align: left;
 }
 
-/*-----------------------------------------------------------------------------------*/
-/*   Services
-/*-----------------------------------------------------------------------------------*/
-
 #services {
   background: #f7f7f7;
   position: relative;
@@ -379,6 +304,7 @@ nav ul li a {
 .owl-item {
   float: left;
 }
+
 .services-block span {
   margin: 10px 0;
   position: relative;
@@ -402,8 +328,7 @@ nav ul li a {
   line-height: 44px;
 }
 
-
-.services-carousel  .owl-stage-outer {
+.services-carousel .owl-stage-outer {
   overflow: hidden;
 }
 
@@ -447,11 +372,6 @@ nav ul li a {
   text-decoration: underline;
 }
 
-
-/*-----------------------------------------------------------------------------------*/
-/*  Portfolio
-/*-----------------------------------------------------------------------------------*/
-
 #portfolio {
   position: relative;
   padding-bottom: 50px;
@@ -484,7 +404,7 @@ nav ul li a {
   transition: all 0.5s ease-in-out 0s;
 }
 
-#portfolio .portfolio-list .nav li:hover, #portfolio .portfolio-list .nav li.filter-active  {
+#portfolio .portfolio-list .nav li:hover, #portfolio .portfolio-list .nav li.filter-active {
   color: #b8a07e;
   -moz-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
@@ -499,43 +419,44 @@ nav ul li a {
   width: 100%;
 }
 
-.portfolio-thumbnail {
+#portfolio .portfolio-carousel {
+  display: none;
+}
+
+.portfolio-thumbnail, .portfolio-item {
   margin-bottom: 30px;
   overflow: hidden;
   min-height: 260px;
 }
 
-.portfolio-thumbnail img {
+.portfolio-thumbnail img, .portfolio-item img {
   max-width: 100%;
 }
 
-/* Wrapper for the page content */
 #content-wrapper {
-  transition: filter 0.3s ease-in-out; /* Smooth transition for blur effect */
+  transition: filter 0.3s ease-in-out;
 }
 
-/* Modal styling */
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(0.8); /* Initial small scale */
+  transform: translate(-50%, -50%) scale(0.8);
   width: 40%;
   height: 95%;
   border-radius: 5px;
   opacity: 0;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth opening/closing transition */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .modal.show {
   display: block;
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1); /* Modal scaling to normal size */
+  transform: translate(-50%, -50%) scale(1);
 }
 
-/* Modal content */
 .modal-content {
   display: block;
   margin: auto;
@@ -555,202 +476,166 @@ nav ul li a {
   z-index: 1000;
 }
 
-/* Blurred background when modal is open */
 .body-blur #content-wrapper {
   filter: blur(5px);
-  pointer-events: none; /* Prevent interaction with blurred content */
-  transition: filter 0.3s ease-in-out; /* Smooth transition for blur */
+  pointer-events: none;
+  transition: filter 0.3s ease-in-out;
 }
 
-/* Responsive adjustments for mobile devices */
-@media (max-width: 768px) {
-  /* Navbar */
-  #main-nav .nav-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #main-nav .nav-menu li {
-    margin-bottom: 10px;
-  }
-
-  /* About Section */
-  #about .about-img {
-    margin: 0 auto;
-    width: 80%; /* Make the image fit nicely */
-    max-width: 300px;
-  }
-
-  #about .about-descr {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  #about .socials-media ul {
-    justify-content: center;
-  }
-
-  /* Services Section */
-  #services .services-carousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #services .services-block {
-    width: 100%;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  /* Portfolio Section */
-  #portfolio .portfolio-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #portfolio .portfolio-thumbnail {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  #portfolio img {
-    width: 100%;
-    height: auto;
-    border: none;
-  }
-
-  /* Footer and Links */
-  #portfolio .portfolio-github-link {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-}
-
-/* Mobile-first styles (max-width 480px) */
-@media (max-width: 480px) {
-  /* General */
-  body {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    line-height: 1.6;
-    overflow-x: hidden; /* Avoid horizontal scrolling */
-  }
-
-  section {
-    padding: 15px;
-  }
-
-  h1, h2, h3, h4 {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  /* About Section */
-  #about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #about .about-img {
-    width: 70%;
-    max-width: 200px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-  }
-
-  #about .about-descr {
-    text-align: center;
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-
-  /* Social Media Carousel */
-  #about .socials-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  #about .socials-carousel::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for a clean look */
-  }
-
-  #about .socials-carousel-item {
-    flex: 0 0 auto;
-    scroll-snap-align: center;
-    background: #f1f1f1;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-
-  #about .socials-carousel-item a {
-    font-size: 20px;
-    color: #007bff;
-    text-decoration: none;
-  }
-
-  /* Projects Carousel */
-  #portfolio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  #portfolio .projects-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 15px;
-    padding: 10px 0;
-  }
-
-  #portfolio .projects-carousel::-webkit-scrollbar {
+/* Responsive Design */
+@media (max-width: 991px) {
+  .nav-menu {
     display: none;
   }
-
-  #portfolio .projects-carousel-item {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
+  nav {
+    display: block;
   }
+  .responsive {
+    display: block;
+    float: right;
+    cursor: pointer;
+  }
+  .nav-menu.active {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+  nav ul li {
+    float: none;
+    margin: 10px 0;
+  }
+  #about .div-img-bg {
+    margin: 0 auto 20px;
+    max-width: 300px;
+  }
+  #about .about-descr .p-heading {
+    font-size: 24px;
+    text-align: center;
+  }
+  #about .about-descr .separator {
+    text-align: center;
+    max-width: 100%;
+  }
+  .about-descr .socials-media ul {
+    justify-content: center;
+    gap: 30px;
+  }
+  #resumeButton {
+    float: none;
+  }
+}
 
-  #portfolio .projects-carousel-item img {
+@media (max-width: 767px) {
+  .paddsection {
+    padding: 60px 0;
+  }
+  .section-title h2 {
+    font-size: 22px;
+  }
+  .portfolio-container {
+    display: none;
+  }
+  .portfolio-carousel {
+    display: block;
+  }
+  .portfolio-item {
+    min-height: auto;
+    text-align: center;
+  }
+  .portfolio-item img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    max-width: 200px;
+    margin: 0 auto;
   }
-
-  #portfolio .projects-carousel-item .project-title {
-    font-size: 16px;
+  .portfolio-carousel .owl-stage-outer {
+    overflow: hidden;
+  }
+  .portfolio-carousel .owl-dots {
     margin-top: 10px;
-  }
-
-  #portfolio .projects-carousel-item .project-description {
-    font-size: 14px;
-    color: #666;
-  }
-
-  /* Footer */
-  footer {
     text-align: center;
+  }
+  .portfolio-carousel .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  .portfolio-carousel .owl-dot.active {
+    background-color: #b8a07e;
+  }
+  .portfolio-carousel .owl-nav {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+  .portfolio-carousel .owl-nav .owl-prev,
+  .portfolio-carousel .owl-nav .owl-next {
+    position: absolute;
+    font-size: 24px;
+    color: #999;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .portfolio-carousel .owl-nav .owl-prev {
+    left: 10px;
+  }
+  .portfolio-carousel .owl-nav .owl-next {
+    right: 10px;
+  }
+  .modal {
+    width: 90%;
+    height: 80vh;
+  }
+  .modal-content {
+    height: 100%;
+  }
+  #portfolio .portfolio-list .nav {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  #portfolio .portfolio-list .nav li {
+    flex: 0 0 auto;
+    margin: 0 10px 0 0;
+    float: none;
+  }
+}
+
+@media (max-width: 575px) {
+  body {
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .btn {
+    font-size: 11px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+  }
+  .services-block i {
+    font-size: 36px;
+  }
+  .services-block span {
     font-size: 12px;
-    padding: 15px;
-    background: #f8f9fa;
+  }
+  .services-block .separator {
+    font-size: 12px;
+  }
+  .about-descr .socials-media i {
+    font-size: 2rem;
+  }
+  .portfolio-list .nav li {
+    margin: 0 20px 10px 0;
+    font-size: 12px;
   }
 }
