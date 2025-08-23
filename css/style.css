@@ -423,6 +423,10 @@ nav ul li a {
   display: none;
 }
 
+#portfolio .all-projects-carousel {
+  display: none;
+}
+
 .portfolio-thumbnail, .portfolio-item {
   margin-bottom: 30px;
   overflow: hidden;
@@ -538,6 +542,10 @@ nav ul li a {
   .portfolio-carousel {
     display: block;
   }
+  .all-projects-carousel {
+    display: block;
+    margin-top: 20px;
+  }
   .portfolio-item {
     min-height: auto;
     text-align: center;
@@ -548,14 +556,17 @@ nav ul li a {
     max-width: 200px;
     margin: 0 auto;
   }
-  .portfolio-carousel .owl-stage-outer {
+  .portfolio-carousel .owl-stage-outer,
+  .all-projects-carousel .owl-stage-outer {
     overflow: hidden;
   }
-  .portfolio-carousel .owl-dots {
+  .portfolio-carousel .owl-dots,
+  .all-projects-carousel .owl-dots {
     margin-top: 10px;
     text-align: center;
   }
-  .portfolio-carousel .owl-dot {
+  .portfolio-carousel .owl-dot,
+  .all-projects-carousel .owl-dot {
     display: inline-block;
     margin: 0 5px;
     width: 12px;
@@ -564,10 +575,12 @@ nav ul li a {
     background-color: #ddd;
     cursor: pointer;
   }
-  .portfolio-carousel .owl-dot.active {
+  .portfolio-carousel .owl-dot.active,
+  .all-projects-carousel .owl-dot.active {
     background-color: #b8a07e;
   }
-  .portfolio-carousel .owl-nav {
+  .portfolio-carousel .owl-nav,
+  .all-projects-carousel .owl-nav {
     display: block;
     position: absolute;
     top: 50%;
@@ -575,7 +588,9 @@ nav ul li a {
     transform: translateY(-50%);
   }
   .portfolio-carousel .owl-nav .owl-prev,
-  .portfolio-carousel .owl-nav .owl-next {
+  .portfolio-carousel .owl-nav .owl-next,
+  .all-projects-carousel .owl-nav .owl-prev,
+  .all-projects-carousel .owl-nav .owl-next {
     position: absolute;
     font-size: 24px;
     color: #999;
@@ -583,10 +598,12 @@ nav ul li a {
     border: none;
     cursor: pointer;
   }
-  .portfolio-carousel .owl-nav .owl-prev {
+  .portfolio-carousel .owl-nav .owl-prev,
+  .all-projects-carousel .owl-nav .owl-prev {
     left: 10px;
   }
-  .portfolio-carousel .owl-nav .owl-next {
+  .portfolio-carousel .owl-nav .owl-next,
+  .all-projects-carousel .owl-nav .owl-next {
     right: 10px;
   }
   .modal {
@@ -601,11 +618,26 @@ nav ul li a {
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #b8a07e #ddd;
+  }
+  #portfolio .portfolio-list .nav::-webkit-scrollbar {
+    height: 8px;
+  }
+  #portfolio .portfolio-list .nav::-webkit-scrollbar-track {
+    background: #ddd;
+  }
+  #portfolio .portfolio-list .nav::-webkit-scrollbar-thumb {
+    background: #b8a07e;
+    border-radius: 4px;
   }
   #portfolio .portfolio-list .nav li {
     flex: 0 0 auto;
-    margin: 0 10px 0 0;
+    margin: 0 15px 0 0;
     float: none;
+    display: inline-block;
+    padding: 5px 10px;
   }
 }
 
@@ -635,7 +667,8 @@ nav ul li a {
     font-size: 2rem;
   }
   .portfolio-list .nav li {
-    margin: 0 20px 10px 0;
+    margin: 0 10px 0 0;
     font-size: 12px;
+    padding: 5px 8px;
   }
 }

@@ -1,408 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- meta -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
-
   <title>Portfolio</title>
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
-
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Libraries CSS Files -->
   <link href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css" rel="stylesheet">
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
   <link href="lib/hover/hover.min.css" rel="stylesheet">
-
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body>
-  <div id="content-wrapper">
-    <!-- start section navbar -->
-    <nav id="main-nav">
-      <div class="row">
-        <div class="container">
-          <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
-          <ul class="nav-menu list-unstyled">
-            <li><a href="#about" class="smoothScroll">About</a></li>
-            <li><a href="#portfolio" class="smoothScroll">Projects</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- End section navbar -->
-
-    <!-- start section about us -->
-    <div id="about" class="paddsection">
+<div id="content-wrapper">
+  <!-- start section navbar -->
+  <nav id="main-nav">
+    <div class="row">
       <div class="container">
-        <div class="row justify-content-between">
-          <!-- About Image -->
-          <div class="col-lg-4 col-12">
-            <div class="div-img-bg">
-              <div class="about-img">
-                <img src="images/prof.png" class="img-responsive" alt="me">
-              </div>
-            </div>
-          </div>
-          <!-- About Description -->
-          <div class="col-lg-7 col-12">
-            <div class="about-descr">
-              <p class="p-heading">DADO, John Rey</p>
-              <p class="separator">
-                Hi, I'm John Rey Dado, an Information Technology graduate specializing in Web Development.
-                I focus on creating functional and efficient web solutions, combining technical skills and practical design.
-              </p>
-                          <!-- Social Media Links -->
-              <div class="socials-media text-center mt-4">
-                <ul>
-                  <li>
-                    <a href="https://www.facebook.com/yourprofile" target="_blank">
-                      <i class="ion-social-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/yourprofile" target="_blank">
-                      <i class="ion-social-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/johnrey666" target="_blank">
-                      <i class="ion-social-github"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- Resume Button -->
-              <div class="text-center mt-4">
-                <button id="resumeButton" class="btn btn-primary">View Resume</button>
-              </div>
+        <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div>
+        <ul class="nav-menu list-unstyled">
+          <li><a href="#about" class="smoothScroll">About</a></li>
+          <li><a href="#portfolio" class="smoothScroll">Projects</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End section navbar -->
+  <!-- start section about us -->
+  <div id="about" class="paddsection">
+    <div class="container">
+      <div class="row justify-content-between">
+        <!-- About Image -->
+        <div class="col-lg-4 col-12">
+          <div class="div-img-bg">
+            <div class="about-img">
+              <img src="images/prof.png" class="img-responsive" alt="me">
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- end section about us -->
-
-    <!-- start section services -->
-    <div id="services">
-      <div class="container">
-        <div class="services-carousel owl-theme">
-          <div class="services-block">
-            <i class="ion-ios-color-wand-outline"></i>
-            <span>UI/UX DESIGN</span>
-            <p class="separator">I create clean, user-friendly interfaces that enhance functionality and improve user experience</p>
-          </div>
-          <div class="services-block">
-            <i class="ion-ios-browsers-outline"></i>
-            <span>WEB DESIGN</span>
-            <p class="separator">I design responsive and visually appealing websites focused on functionality and user experience.</p>
-          </div>
-          <div class="services-block">
-            <i class="ion-social-android-outline"></i>
-            <span>MOBILE APPS</span>
-            <p class="separator">I develop mobile apps using flutter/dart for seamless user experiences.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end section services -->
-
-    <!-- start section portfolio -->
-    <div id="portfolio" class="text-center paddsection">
-      <div class="container">
-        <div class="section-title text-center">
-          <h2>Projects</h2>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="portfolio-list">
-              <ul class="nav list-unstyled" id="portfolio-flters">
-                <li class="filter filter-active" data-filter=".seniorcare" onclick="showGithub('seniorcare')">SeniorCare Connect</li>
-                <li class="filter" data-filter=".mailah" onclick="showGithub('mailah')">Mailah Lite</li>
-                <li class="filter" data-filter=".dental" onclick="showGithub('dental')">Creative Dental</li>
+        <!-- About Description -->
+        <div class="col-lg-7 col-12">
+          <div class="about-descr">
+            <p class="p-heading">DADO, John Rey</p>
+            <p class="separator"> Hi, I'm John Rey Dado, an Information Technology graduate specializing in Web Development. I focus on creating functional and efficient web solutions, combining technical skills and practical design. </p>
+            <!-- Social Media Links -->
+            <div class="socials-media text-center mt-4">
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/yourprofile" target="_blank">
+                    <i class="ion-social-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/yourprofile" target="_blank">
+                    <i class="ion-social-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/johnrey666" target="_blank">
+                    <i class="ion-social-github"></i>
+                  </a>
+                </li>
               </ul>
             </div>
-            <div class="portfolio-container">
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
-                <a class="popup-img" href="images/portfolio/sc1.jpg">
-                  <img src="images/portfolio/sc1.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
-                <a class="popup-img" href="images/portfolio/sc2.jpg">
-                  <img src="images/portfolio/sc2.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
-                <a class="popup-img" href="images/portfolio/sc3.jpg">
-                  <img src="images/portfolio/sc3.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
-                <a class="popup-img" href="images/portfolio/sc4.jpg">
-                  <img src="images/portfolio/sc4.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
-                <a class="popup-img" href="images/portfolio/sc5.jpg">
-                  <img src="images/portfolio/sc5.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
-                <a class="popup-img" href="images/portfolio/sc6.jpg">
-                  <img src="images/portfolio/sc6.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
-                <a class="popup-img" href="images/portfolio/sc7.jpg">
-                  <img src="images/portfolio/sc7.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
-                <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
-                  <a href="https://github.com/johnrey666/seniorcare.git" target="_blank">View GitHub</a>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
-                <a class="popup-img" href="images/portfolio/m1.png">
-                  <img src="images/portfolio/m1.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
-                <a class="popup-img" href="images/portfolio/m2.png">
-                  <img src="images/portfolio/m2.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
-                <a class="popup-img" href="images/portfolio/m3.png">
-                  <img src="images/portfolio/m3.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
-                <a class="popup-img" href="images/portfolio/m4.png">
-                  <img src="images/portfolio/m4.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
-                <a class="popup-img" href="images/portfolio/m5.png">
-                  <img src="images/portfolio/m5.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
-                <a class="popup-img" href="images/portfolio/m6.png">
-                  <img src="images/portfolio/m6.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
-                <a class="popup-img" href="images/portfolio/m7.png">
-                  <img src="images/portfolio/m7.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-                <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
-                  <a href="https://github.com/johnrey666/dado_firebase.git" target="_blank">View GitHub</a>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
-                <a class="popup-img" href="images/portfolio/c1.png">
-                  <img src="images/portfolio/c1.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
-                <a class="popup-img" href="images/portfolio/c2.png">
-                  <img src="images/portfolio/c2.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
-                <a class="popup-img" href="images/portfolio/c3.png">
-                  <img src="images/portfolio/c3.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
-                <a class="popup-img" href="images/portfolio/c4.png">
-                  <img src="images/portfolio/c4.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
-                <a class="popup-img" href="images/portfolio/c5.png">
-                  <img src="images/portfolio/c5.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
-                <a class="popup-img" href="images/portfolio/c6.png">
-                  <img src="images/portfolio/c6.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
-                <a class="popup-img" href="images/portfolio/c7.png">
-                  <img src="images/portfolio/c7.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
-                <a class="popup-img" href="images/portfolio/c8.png">
-                  <img src="images/portfolio/c8.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-                <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
-                  <a href="https://github.com/johnrey666/creative_dental.git" target="_blank">View GitHub</a>
-                </div>
+            <!-- Resume Button -->
+            <div class="text-center mt-4">
+              <button id="resumeButton" class="btn btn-primary">View Resume</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end section about us -->
+  <!-- start section services -->
+  <div id="services">
+    <div class="container">
+      <div class="services-carousel owl-theme">
+        <div class="services-block">
+          <i class="ion-ios-color-wand-outline"></i>
+          <span>UI/UX DESIGN</span>
+          <p class="separator">I create clean, user-friendly interfaces that enhance functionality and improve user experience</p>
+        </div>
+        <div class="services-block">
+          <i class="ion-ios-browsers-outline"></i>
+          <span>WEB DESIGN</span>
+          <p class="separator">I design responsive and visually appealing websites focused on functionality and user experience.</p>
+        </div>
+        <div class="services-block">
+          <i class="ion-social-android-outline"></i>
+          <span>MOBILE APPS</span>
+          <p class="separator">I develop mobile apps using flutter/dart for seamless user experiences.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end section services -->
+  <!-- start section portfolio -->
+  <div id="portfolio" class="text-center paddsection">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Projects</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="portfolio-list">
+            <ul class="nav list-unstyled" id="portfolio-flters">
+              <li class="filter filter-active" data-filter=".watermonitoring" onclick="showGithub('watermonitoring')">Water Monitoring</li>
+              <li class="filter" data-filter=".seniorcare" onclick="showGithub('seniorcare')">SeniorCare Connect</li>
+              <li class="filter" data-filter=".mailah" onclick="showGithub('mailah')">Mailah Lite</li>
+              <li class="filter" data-filter=".dental" onclick="showGithub('dental')">Creative Dental</li>
+            </ul>
+          </div>
+          <div class="portfolio-container">
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w1.png">
+                <img src="images/portfolio/w1.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w2.png">
+                <img src="images/portfolio/w2.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w3.png">
+                <img src="images/portfolio/w3.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w4.png">
+                <img src="images/portfolio/w4.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w5.png">
+                <img src="images/portfolio/w5.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w6.png">
+                <img src="images/portfolio/w6.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w7.png">
+                <img src="images/portfolio/w7.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w8.png">
+                <img src="images/portfolio/w8.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w9.png">
+                <img src="images/portfolio/w9.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w10.png">
+                <img src="images/portfolio/w10.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w11.png">
+                <img src="images/portfolio/w11.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w12.png">
+                <img src="images/portfolio/w12.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w13.png">
+                <img src="images/portfolio/w13.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail watermonitoring">
+              <a class="popup-img" href="images/portfolio/w14.png">
+                <img src="images/portfolio/w14.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/water_monitoring.git" target="_blank">View GitHub</a>
               </div>
             </div>
-            <div class="portfolio-carousel owl-theme">
-              <div class="portfolio-item seniorcare">
-                <a class="popup-img" href="images/portfolio/sc1.jpg">
-                  <img src="images/portfolio/sc1.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
+              <a class="popup-img" href="images/portfolio/sc1.jpg">
+                <img src="images/portfolio/sc1.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
+              <a class="popup-img" href="images/portfolio/sc2.jpg">
+                <img src="images/portfolio/sc2.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
+              <a class="popup-img" href="images/portfolio/sc3.jpg">
+                <img src="images/portfolio/sc3.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
+              <a class="popup-img" href="images/portfolio/sc4.jpg">
+                <img src="images/portfolio/sc4.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
+              <a class="popup-img" href="images/portfolio/sc5.jpg">
+                <img src="images/portfolio/sc5.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
+              <a class="popup-img" href="images/portfolio/sc6.jpg">
+                <img src="images/portfolio/sc6.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail seniorcare">
+              <a class="popup-img" href="images/portfolio/sc7.jpg">
+                <img src="images/portfolio/sc7.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/seniorcare.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item seniorcare">
-                <a class="popup-img" href="images/portfolio/sc2.jpg">
-                  <img src="images/portfolio/sc2.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
+              <a class="popup-img" href="images/portfolio/m1.png">
+                <img src="images/portfolio/m1.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
+              <a class="popup-img" href="images/portfolio/m2.png">
+                <img src="images/portfolio/m2.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
+              <a class="popup-img" href="images/portfolio/m3.png">
+                <img src="images/portfolio/m3.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
+              <a class="popup-img" href="images/portfolio/m4.png">
+                <img src="images/portfolio/m4.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
+              <a class="popup-img" href="images/portfolio/m5.png">
+                <img src="images/portfolio/m5.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
+              <a class="popup-img" href="images/portfolio/m6.png">
+                <img src="images/portfolio/m6.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail mailah">
+              <a class="popup-img" href="images/portfolio/m7.png">
+                <img src="images/portfolio/m7.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/dado_firebase.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item seniorcare">
-                <a class="popup-img" href="images/portfolio/sc3.jpg">
-                  <img src="images/portfolio/sc3.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
+              <a class="popup-img" href="images/portfolio/c1.png">
+                <img src="images/portfolio/c1.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
+              <a class="popup-img" href="images/portfolio/c2.png">
+                <img src="images/portfolio/c2.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
+              <a class="popup-img" href="images/portfolio/c3.png">
+                <img src="images/portfolio/c3.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
+              <a class="popup-img" href="images/portfolio/c4.png">
+                <img src="images/portfolio/c4.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
+              <a class="popup-img" href="images/portfolio/c5.png">
+                <img src="images/portfolio/c5.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
+              <a class="popup-img" href="images/portfolio/c6.png">
+                <img src="images/portfolio/c6.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
+              <a class="popup-img" href="images/portfolio/c7.png">
+                <img src="images/portfolio/c7.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 portfolio-thumbnail dental">
+              <a class="popup-img" href="images/portfolio/c8.png">
+                <img src="images/portfolio/c8.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/creative_dental.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item seniorcare">
-                <a class="popup-img" href="images/portfolio/sc4.jpg">
-                  <img src="images/portfolio/sc4.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
+            </div>
+          </div>
+          <div class="portfolio-carousel owl-theme">
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w1.png">
+                <img src="images/portfolio/w1.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w2.png">
+                <img src="images/portfolio/w2.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w3.png">
+                <img src="images/portfolio/w3.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w4.png">
+                <img src="images/portfolio/w4.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w5.png">
+                <img src="images/portfolio/w5.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w6.png">
+                <img src="images/portfolio/w6.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w7.png">
+                <img src="images/portfolio/w7.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w8.png">
+                <img src="images/portfolio/w8.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w9.png">
+                <img src="images/portfolio/w9.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w10.png">
+                <img src="images/portfolio/w10.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w11.png">
+                <img src="images/portfolio/w11.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w12.png">
+                <img src="images/portfolio/w12.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w13.png">
+                <img src="images/portfolio/w13.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w14.png">
+                <img src="images/portfolio/w14.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/water_monitoring.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item seniorcare">
-                <a class="popup-img" href="images/portfolio/sc5.jpg">
-                  <img src="images/portfolio/sc5.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc1.jpg">
+                <img src="images/portfolio/sc1.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc2.jpg">
+                <img src="images/portfolio/sc2.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc3.jpg">
+                <img src="images/portfolio/sc3.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc4.jpg">
+                <img src="images/portfolio/sc4.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc5.jpg">
+                <img src="images/portfolio/sc5.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc6.jpg">
+                <img src="images/portfolio/sc6.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc7.jpg">
+                <img src="images/portfolio/sc7.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/seniorcare.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item seniorcare">
-                <a class="popup-img" href="images/portfolio/sc6.jpg">
-                  <img src="images/portfolio/sc6.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m1.png">
+                <img src="images/portfolio/m1.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m2.png">
+                <img src="images/portfolio/m2.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m3.png">
+                <img src="images/portfolio/m3.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m4.png">
+                <img src="images/portfolio/m4.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m5.png">
+                <img src="images/portfolio/m5.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m6.png">
+                <img src="images/portfolio/m6.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m7.png">
+                <img src="images/portfolio/m7.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/dado_firebase.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item seniorcare">
-                <a class="popup-img" href="images/portfolio/sc7.jpg">
-                  <img src="images/portfolio/sc7.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130);">
-                </a>
-                <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
-                  <a href="https://github.com/johnrey666/seniorcare.git" target="_blank">View GitHub</a>
-                </div>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c1.png">
+                <img src="images/portfolio/c1.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c2.png">
+                <img src="images/portfolio/c2.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c3.png">
+                <img src="images/portfolio/c3.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c4.png">
+                <img src="images/portfolio/c4.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c5.png">
+                <img src="images/portfolio/c5.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c6.png">
+                <img src="images/portfolio/c6.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c7.png">
+                <img src="images/portfolio/c7.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c8.png">
+                <img src="images/portfolio/c8.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/creative_dental.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item mailah">
-                <a class="popup-img" href="images/portfolio/m1.png">
-                  <img src="images/portfolio/m1.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
+            </div>
+          </div>
+          <div class="all-projects-carousel owl-theme">
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w1.png">
+                <img src="images/portfolio/w1.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w2.png">
+                <img src="images/portfolio/w2.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w3.png">
+                <img src="images/portfolio/w3.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w4.png">
+                <img src="images/portfolio/w4.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w5.png">
+                <img src="images/portfolio/w5.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w6.png">
+                <img src="images/portfolio/w6.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w7.png">
+                <img src="images/portfolio/w7.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w8.png">
+                <img src="images/portfolio/w8.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w9.png">
+                <img src="images/portfolio/w9.png" alt="img" style="height: 300px; width: 180px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w10.png">
+                <img src="images/portfolio/w10.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w11.png">
+                <img src="images/portfolio/w11.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w12.png">
+                <img src="images/portfolio/w12.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w13.png">
+                <img src="images/portfolio/w13.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item watermonitoring">
+              <a class="popup-img" href="images/portfolio/w14.png">
+                <img src="images/portfolio/w14.png" alt="img" style="height: 180px; width: 320px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/water_monitoring.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item mailah">
-                <a class="popup-img" href="images/portfolio/m2.png">
-                  <img src="images/portfolio/m2.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc1.jpg">
+                <img src="images/portfolio/sc1.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc2.jpg">
+                <img src="images/portfolio/sc2.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc3.jpg">
+                <img src="images/portfolio/sc3.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc4.jpg">
+                <img src="images/portfolio/sc4.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc5.jpg">
+                <img src="images/portfolio/sc5.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc6.jpg">
+                <img src="images/portfolio/sc6.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item seniorcare">
+              <a class="popup-img" href="images/portfolio/sc7.jpg">
+                <img src="images/portfolio/sc7.jpg" alt="img" style="height: 300px; width: 200px; border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/seniorcare.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item mailah">
-                <a class="popup-img" href="images/portfolio/m3.png">
-                  <img src="images/portfolio/m3.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m1.png">
+                <img src="images/portfolio/m1.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m2.png">
+                <img src="images/portfolio/m2.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m3.png">
+                <img src="images/portfolio/m3.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m4.png">
+                <img src="images/portfolio/m4.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m5.png">
+                <img src="images/portfolio/m5.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m6.png">
+                <img src="images/portfolio/m6.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item mailah">
+              <a class="popup-img" href="images/portfolio/m7.png">
+                <img src="images/portfolio/m7.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/dado_firebase.git" target="_blank">View GitHub</a>
               </div>
-              <div class="portfolio-item mailah">
-                <a class="popup-img" href="images/portfolio/m4.png">
-                  <img src="images/portfolio/m4.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item mailah">
-                <a class="popup-img" href="images/portfolio/m5.png">
-                  <img src="images/portfolio/m5.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item mailah">
-                <a class="popup-img" href="images/portfolio/m6.png">
-                  <img src="images/portfolio/m6.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item mailah">
-                <a class="popup-img" href="images/portfolio/m7.png">
-                  <img src="images/portfolio/m7.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-                <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
-                  <a href="https://github.com/johnrey666/dado_firebase.git" target="_blank">View GitHub</a>
-                </div>
-              </div>
-              <div class="portfolio-item dental">
-                <a class="popup-img" href="images/portfolio/c1.png">
-                  <img src="images/portfolio/c1.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item dental">
-                <a class="popup-img" href="images/portfolio/c2.png">
-                  <img src="images/portfolio/c2.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item dental">
-                <a class="popup-img" href="images/portfolio/c3.png">
-                  <img src="images/portfolio/c3.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item dental">
-                <a class="popup-img" href="images/portfolio/c4.png">
-                  <img src="images/portfolio/c4.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item dental">
-                <a class="popup-img" href="images/portfolio/c5.png">
-                  <img src="images/portfolio/c5.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item dental">
-                <a class="popup-img" href="images/portfolio/c6.png">
-                  <img src="images/portfolio/c6.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item dental">
-                <a class="popup-img" href="images/portfolio/c7.png">
-                  <img src="images/portfolio/c7.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-              </div>
-              <div class="portfolio-item dental">
-                <a class="popup-img" href="images/portfolio/c8.png">
-                  <img src="images/portfolio/c8.png" alt="img" style="border: 1px solid rgb(131, 131, 130);">
-                </a>
-                <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
-                  <a href="https://github.com/johnrey666/creative_dental.git" target="_blank">View GitHub</a>
-                </div>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c1.png">
+                <img src="images/portfolio/c1.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c2.png">
+                <img src="images/portfolio/c2.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c3.png">
+                <img src="images/portfolio/c3.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c4.png">
+                <img src="images/portfolio/c4.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c5.png">
+                <img src="images/portfolio/c5.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c6.png">
+                <img src="images/portfolio/c6.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c7.png">
+                <img src="images/portfolio/c7.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+            </div>
+            <div class="portfolio-item dental">
+              <a class="popup-img" href="images/portfolio/c8.png">
+                <img src="images/portfolio/c8.png" alt="img" style="border: 1px solid rgb(131, 131, 130); object-fit: cover;">
+              </a>
+              <div class="portfolio-github-link" style="text-align: center; margin-top: 30px; text-decoration: underline;">
+                <a href="https://github.com/johnrey666/creative_dental.git" target="_blank">View GitHub</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- End section portfolio -->
   </div>
-
-  <!-- Modal for Resume -->
-  <div id="resumeModal" class="modal">
-    <span class="close">&times;</span>
-    <embed class="modal-content" id="resumeImage" src="images/resume_dado.pdf" type="application/pdf" width="100%" height="500px">
-  </div>
-
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/typed/typed.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
-
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+  <!-- End section portfolio -->
+</div>
+<!-- Modal for Resume -->
+<div id="resumeModal" class="modal">
+  <span class="close">&times;</span>
+  <embed class="modal-content" id="resumeImage" src="images/resume_dado.pdf" type="application/pdf" width="100%" height="500px">
+</div>
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/typed/typed.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/magnific-popup/magnific-popup.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<!-- Contact Form JavaScript File -->
+<script src="contactform/contactform.js"></script>
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
 </body>
-
 </html>
