@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="keywords" content="John Rey Dado, Full Stack Developer, Web Developer, Mobile Developer, Technical Support, Portfolio">
-  <meta name="description" content="John Rey Dado — Full-Stack Developer & Technical Support Specialist. Explore projects, experience, skills, and chat with my AI assistant.">
+  <meta name="description" content="John Rey Dado — Full-Stack Developer & Technical Support Specialist. Projects, experience, skills, and an AI assistant.">
   <title>John Rey Dado — Full-Stack Developer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,34 +18,26 @@
 </head>
 <body>
 
-  <!-- Custom cursor -->
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
-
-  <!-- Decorations -->
   <div id="scroll-progress"></div>
-  <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow" aria-hidden="true"></div>
-  <div class="noise" aria-hidden="true"></div>
 
   <!-- ===================== NAVBAR ===================== -->
   <header id="navbar">
     <div class="container nav-inner">
-      <a href="#home" class="brand" data-magnetic>
+      <a href="#home" class="brand">
         <span class="brand-mark">JR</span>
-        <span class="brand-text">John Rey<span class="dot">.</span></span>
+        <span>John Rey Dado</span>
       </a>
       <nav class="nav-links" id="nav-links">
-        <a href="#home" class="nav-link active">home</a>
-        <a href="#about" class="nav-link">about</a>
-        <a href="#skills" class="nav-link">skills</a>
-        <a href="#experience" class="nav-link">experience</a>
-        <a href="#projects" class="nav-link">work</a>
-        <a href="#contact" class="nav-link">contact</a>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Work</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
       <div class="nav-actions">
         <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
-        <a href="#contact" class="btn btn-grad nav-cta" data-magnetic>Let's talk</a>
+        <a href="#contact" class="btn btn-primary nav-cta">Let's talk</a>
         <button id="nav-toggle" class="icon-btn nav-burger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
@@ -55,145 +47,137 @@
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div class="hero-copy" data-aos="fade-up">
-        <span class="eyebrow"><span class="pulse"></span> // full-stack developer · technical support</span>
-        <h1 class="hero-title">I'm <span class="grad-text">John Rey Dado</span></h1>
-        <h2 class="hero-sub">&gt; I build <span id="typed" class="typed-text"></span></h2>
+        <span class="eyebrow"><span class="pulse"></span> Available for opportunities</span>
+        <h1 class="hero-title">John Rey <span class="accent">Dado</span></h1>
+        <p class="hero-role">Full-Stack Developer building <span id="typed" class="typed-text"></span></p>
         <p class="hero-desc">
-          A developer who turns ideas into working software — from <strong>responsive web apps</strong> and
-          <strong>cross-platform mobile apps</strong> to <strong>internal automation</strong> and clean,
-          dependable systems. Currently a <strong>Technical Support Specialist</strong> who never stopped shipping code.
+          IT graduate and developer turning ideas into dependable software — responsive web apps,
+          cross-platform mobile apps, and internal automation. Currently a Technical Support Specialist
+          at LCC Groups who never stopped shipping code.
         </p>
         <div class="hero-cta">
-          <a href="#projects" class="btn btn-grad" data-magnetic><i class="fa-solid fa-layer-group"></i> View Work</a>
-          <button id="resumeButton" class="btn btn-ghost" data-magnetic><i class="fa-regular fa-file-lines"></i> Resume</button>
+          <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-arrow-down"></i> View Work</a>
+          <button id="resumeButton" class="btn btn-secondary"><i class="fa-regular fa-file-lines"></i> Resume</button>
         </div>
         <div class="hero-socials">
-          <a href="https://github.com/johnrey666" target="_blank" rel="noopener" aria-label="GitHub" data-magnetic><i class="fa-brands fa-github"></i></a>
-          <a href="https://web.facebook.com/johnrey.dado.2025" target="_blank" rel="noopener" aria-label="Facebook" data-magnetic><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="mailto:johnreydado@gmail.com" aria-label="Email" data-magnetic><i class="fa-solid fa-envelope"></i></a>
-          <a href="tel:+639853886411" aria-label="Phone" data-magnetic><i class="fa-solid fa-phone"></i></a>
+          <a href="https://github.com/johnrey666" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.facebook.com/johnrey.dado" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="mailto:johnreydado@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:+639123456789" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
         </div>
+        <div class="scroll-cue"><span class="line"></span> scroll to explore</div>
       </div>
 
-      <div class="orbit-wrap" data-aos="zoom-in" data-aos-delay="150">
-        <div class="orbit" id="orbit">
-          <div class="orbit-core">JR<span>// dev</span></div>
-          <div class="ring ring-1">
-            <div class="node" style="--a:0deg"><i class="fa-brands fa-html5"></i></div>
-            <div class="node" style="--a:90deg"><i class="fa-brands fa-js"></i></div>
-            <div class="node" style="--a:180deg"><i class="fa-brands fa-php"></i></div>
-            <div class="node" style="--a:270deg"><i class="fa-solid fa-mobile-screen"></i></div>
+      <div class="hero-visual" data-aos="fade-left" data-aos-delay="150">
+        <div class="portrait">
+          <img src="images/prof.png" alt="John Rey Dado">
+        </div>
+        <div class="float-card fc-status">
+          <div class="fc-icon"><i class="fa-solid fa-headset"></i></div>
+          <div>
+            <div class="fc-label">currently</div>
+            <div class="fc-value">Tech Support @ LCC</div>
           </div>
-          <div class="ring ring-2">
-            <div class="node" style="--a:30deg"><i class="fa-brands fa-angular"></i></div>
-            <div class="node" style="--a:90deg"><i class="fa-brands fa-laravel"></i></div>
-            <div class="node" style="--a:150deg"><i class="fa-solid fa-database"></i></div>
-            <div class="node" style="--a:210deg"><i class="fa-brands fa-python"></i></div>
-            <div class="node" style="--a:270deg"><i class="fa-brands fa-java"></i></div>
-            <div class="node" style="--a:330deg"><i class="fa-solid fa-fire"></i></div>
+        </div>
+        <div class="float-card fc-exp">
+          <div class="fc-icon"><i class="fa-solid fa-code"></i></div>
+          <div>
+            <div class="fc-label">building</div>
+            <div class="fc-value">Web · Mobile · Automation</div>
           </div>
         </div>
       </div>
     </div>
-    <a href="#about" class="scroll-down" aria-label="Scroll down"><span class="mouse"><span class="wheel"></span></span></a>
   </section>
 
-  <!-- ===================== ABOUT (BENTO) ===================== -->
+  <!-- ===================== STRIP ===================== -->
+  <div class="strip">
+    <div class="strip-track">
+      <span><i class="fa-brands fa-html5"></i> HTML</span>
+      <span><i class="fa-brands fa-js"></i> JavaScript</span>
+      <span><i class="fa-solid fa-code"></i> TypeScript</span>
+      <span><i class="fa-brands fa-angular"></i> Angular</span>
+      <span><i class="fa-brands fa-laravel"></i> Laravel</span>
+      <span><i class="fa-solid fa-mobile-screen"></i> Flutter</span>
+      <span><i class="fa-brands fa-php"></i> PHP</span>
+      <span><i class="fa-brands fa-python"></i> Python</span>
+      <span><i class="fa-brands fa-java"></i> Java</span>
+      <span><i class="fa-solid fa-k"></i> Kotlin</span>
+      <span><i class="fa-solid fa-fire"></i> Firebase</span>
+      <span><i class="fa-solid fa-bolt"></i> Supabase</span>
+      <span><i class="fa-solid fa-database"></i> MySQL</span>
+      <!-- duplicate -->
+      <span><i class="fa-brands fa-html5"></i> HTML</span>
+      <span><i class="fa-brands fa-js"></i> JavaScript</span>
+      <span><i class="fa-solid fa-code"></i> TypeScript</span>
+      <span><i class="fa-brands fa-angular"></i> Angular</span>
+      <span><i class="fa-brands fa-laravel"></i> Laravel</span>
+      <span><i class="fa-solid fa-mobile-screen"></i> Flutter</span>
+      <span><i class="fa-brands fa-php"></i> PHP</span>
+      <span><i class="fa-brands fa-python"></i> Python</span>
+      <span><i class="fa-brands fa-java"></i> Java</span>
+      <span><i class="fa-solid fa-k"></i> Kotlin</span>
+      <span><i class="fa-solid fa-fire"></i> Firebase</span>
+      <span><i class="fa-solid fa-bolt"></i> Supabase</span>
+      <span><i class="fa-solid fa-database"></i> MySQL</span>
+    </div>
+  </div>
+
+  <!-- ===================== ABOUT ===================== -->
   <section id="about" class="section">
     <div class="container">
       <div class="section-head" data-aos="fade-up">
-        <span class="section-kicker">// 01 — about</span>
-        <h2 class="section-title">A bit about me</h2>
+        <span class="section-kicker">About</span>
+        <h2 class="section-title">A developer who ships, supports, and improves.</h2>
       </div>
 
-      <div class="bento">
-        <div class="tile t-bio spotlight" data-tilt data-aos="fade-up">
-          <span class="tile-label">whoami</span>
+      <div class="about-grid">
+        <div class="about-text" data-aos="fade-up">
+          <h3>I design and build software end-to-end.</h3>
           <p>
-            I'm <strong style="color:var(--heading)">John Rey Dado</strong> — an Information Technology graduate and
-            full-stack developer. I design and build systems end-to-end: web platforms, mobile apps, and internal
-            automation tools. I care about clean code, solid UX, and software that actually holds up in the real world.
+            I'm <strong>John Rey Dado</strong>, an Information Technology graduate and full-stack developer.
+            From web platforms and mobile apps to internal automation tools, I focus on clean code, solid UX,
+            and systems that hold up in the real world.
           </p>
-          <div class="bio-facts">
-            <span>Full-Stack</span><span>Web</span><span>Mobile</span><span>QA</span><span>Automation</span>
+          <p>
+            Today I work as a <strong>Technical Support Specialist at LCC Groups</strong> — developing internal
+            automation, maintaining systems, and training users — while continuing to build full products on the side.
+          </p>
+          <div class="about-stats">
+            <div class="stat-box"><div class="num" data-count="7">0<span class="suf">+</span></div><div class="lbl">Projects shipped</div></div>
+            <div class="stat-box"><div class="num" data-count="4">0<span class="suf">+</span></div><div class="lbl">Years working</div></div>
           </div>
         </div>
 
-        <div class="tile t-photo" data-aos="fade-up" data-aos-delay="80">
-          <img src="images/prof.png" alt="John Rey Dado">
-          <span class="photo-tag mono">// John Rey Dado</span>
-        </div>
-
-        <div class="tile t-stat spotlight" data-tilt data-aos="fade-up" data-aos-delay="120">
-          <span class="num" data-count="7">0<span class="suf">+</span></span>
-          <span class="lbl">Projects shipped</span>
-        </div>
-
-        <div class="tile t-stat spotlight" data-tilt data-aos="fade-up" data-aos-delay="160">
-          <span class="num" data-count="4">0<span class="suf">+</span></span>
-          <span class="lbl">Years working</span>
-        </div>
-
-        <div class="tile t-now spotlight" data-tilt data-aos="fade-up" data-aos-delay="200">
-          <span class="tile-label">currently</span>
-          <span class="now-role">Technical Support Specialist</span>
-          <span class="now-co">@ LCC Groups · since Oct 2025</span>
-        </div>
-
-        <div class="tile t-stat spotlight" data-tilt data-aos="fade-up" data-aos-delay="240">
-          <span class="num" data-count="9">0</span>
-          <span class="lbl">Languages used</span>
-        </div>
-
-        <div class="tile t-cta" data-aos="fade-up" data-aos-delay="280">
-          <div>
-            <h3>Open to opportunities</h3>
-            <p>Let's build something great together.</p>
-          </div>
-          <a href="#contact" class="btn" data-magnetic><i class="fa-solid fa-paper-plane"></i> Contact</a>
+        <div class="about-side" data-aos="fade-up" data-aos-delay="120">
+          <div class="fact"><i class="fa-solid fa-user"></i><div><div class="f-label">role</div><div class="f-value">Full-Stack Developer</div></div></div>
+          <div class="fact"><i class="fa-solid fa-headset"></i><div><div class="f-label">currently</div><div class="f-value">Tech Support @ LCC Groups</div></div></div>
+          <div class="fact"><i class="fa-solid fa-graduation-cap"></i><div><div class="f-label">education</div><div class="f-value">BS Information Technology</div></div></div>
+          <div class="fact"><i class="fa-solid fa-location-dot"></i><div><div class="f-label">location</div><div class="f-value">Philippines</div></div></div>
+          <div class="fact"><i class="fa-solid fa-circle-check"></i><div><div class="f-label">status</div><div class="f-value">Open to opportunities</div></div></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===================== SKILLS ===================== -->
-  <section id="skills" class="section section-alt">
+  <section id="skills" class="section">
     <div class="container">
       <div class="section-head center" data-aos="fade-up">
-        <span class="section-kicker">// 02 — skills</span>
+        <span class="section-kicker">Skills</span>
         <h2 class="section-title">What I work with</h2>
       </div>
 
-      <div class="skill-cards">
-        <article class="skill-card glass spotlight" data-tilt data-aos="fade-up">
-          <div class="s-ico"><i class="fa-solid fa-layer-group"></i></div>
-          <h3>Full-Stack Dev</h3>
-          <p>System development, system design, and debugging across the whole stack.</p>
-        </article>
-        <article class="skill-card glass spotlight" data-tilt data-aos="fade-up" data-aos-delay="80">
-          <div class="s-ico"><i class="fa-solid fa-code"></i></div>
-          <h3>Web Development</h3>
-          <p>Responsive, dynamic web apps built with modern frameworks.</p>
-        </article>
-        <article class="skill-card glass spotlight" data-tilt data-aos="fade-up" data-aos-delay="160">
-          <div class="s-ico"><i class="fa-solid fa-mobile-screen-button"></i></div>
-          <h3>Mobile Development</h3>
-          <p>Cross-platform and native mobile app development.</p>
-        </article>
-        <article class="skill-card glass spotlight" data-tilt data-aos="fade-up" data-aos-delay="240">
-          <div class="s-ico"><i class="fa-solid fa-bug-slash"></i></div>
-          <h3>Quality Assurance</h3>
-          <p>Manual testing, bug tracking, and performance validation.</p>
-        </article>
-        <article class="skill-card glass spotlight" data-tilt data-aos="fade-up" data-aos-delay="320">
-          <div class="s-ico"><i class="fa-solid fa-table-cells-large"></i></div>
-          <h3>Data Processing</h3>
-          <p>High-volume data entry, validation, and database management.</p>
-        </article>
+      <div class="cap-grid">
+        <div class="cap" data-aos="fade-up"><div class="c-icon"><i class="fa-solid fa-layer-group"></i></div><h3>Full-Stack</h3><p>System development, design, and debugging across the stack.</p></div>
+        <div class="cap" data-aos="fade-up" data-aos-delay="60"><div class="c-icon"><i class="fa-solid fa-code"></i></div><h3>Web</h3><p>Responsive, dynamic web apps with modern frameworks.</p></div>
+        <div class="cap" data-aos="fade-up" data-aos-delay="120"><div class="c-icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h3>Mobile</h3><p>Cross-platform and native mobile development.</p></div>
+        <div class="cap" data-aos="fade-up" data-aos-delay="180"><div class="c-icon"><i class="fa-solid fa-bug-slash"></i></div><h3>QA</h3><p>Manual testing, bug tracking, performance validation.</p></div>
+        <div class="cap" data-aos="fade-up" data-aos-delay="240"><div class="c-icon"><i class="fa-solid fa-table-cells-large"></i></div><h3>Data</h3><p>High-volume entry, validation, and database management.</p></div>
       </div>
 
-      <div class="stack-grid">
-        <div class="stack-col glass spotlight" data-tilt data-aos="fade-up">
+      <div class="stack" data-aos="fade-up">
+        <div class="stack-row">
           <h4><i class="fa-solid fa-terminal"></i> Languages</h4>
           <div class="chips">
             <span class="pill"><i class="fa-brands fa-html5"></i> HTML</span>
@@ -208,8 +192,8 @@
             <span class="pill"><i class="fa-solid fa-database"></i> SQL</span>
           </div>
         </div>
-        <div class="stack-col glass spotlight" data-tilt data-aos="fade-up" data-aos-delay="80">
-          <h4><i class="fa-solid fa-cubes"></i> Frameworks &amp; Libraries</h4>
+        <div class="stack-row">
+          <h4><i class="fa-solid fa-cubes"></i> Frameworks</h4>
           <div class="chips">
             <span class="pill"><i class="fa-brands fa-angular"></i> Angular</span>
             <span class="pill"><i class="fa-brands fa-laravel"></i> Laravel</span>
@@ -220,7 +204,7 @@
             <span class="pill"><i class="fa-solid fa-dollar-sign"></i> jQuery</span>
           </div>
         </div>
-        <div class="stack-col glass spotlight" data-tilt data-aos="fade-up">
+        <div class="stack-row">
           <h4><i class="fa-solid fa-server"></i> Databases &amp; Backend</h4>
           <div class="chips">
             <span class="pill"><i class="fa-solid fa-database"></i> MySQL</span>
@@ -231,8 +215,8 @@
             <span class="pill"><i class="fa-solid fa-plug"></i> REST APIs</span>
           </div>
         </div>
-        <div class="stack-col glass spotlight" data-tilt data-aos="fade-up" data-aos-delay="80">
-          <h4><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Platforms</h4>
+        <div class="stack-row">
+          <h4><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h4>
           <div class="chips">
             <span class="pill"><i class="fa-brands fa-git-alt"></i> Git</span>
             <span class="pill"><i class="fa-brands fa-github"></i> GitHub</span>
@@ -243,38 +227,6 @@
           </div>
         </div>
       </div>
-
-      <div class="tech-marquee" data-aos="fade-up">
-        <div class="tech-track">
-          <span><i class="fa-brands fa-html5"></i> HTML</span>
-          <span><i class="fa-brands fa-js"></i> JavaScript</span>
-          <span><i class="fa-solid fa-code"></i> TypeScript</span>
-          <span><i class="fa-brands fa-angular"></i> Angular</span>
-          <span><i class="fa-brands fa-laravel"></i> Laravel</span>
-          <span><i class="fa-solid fa-mobile-screen"></i> Flutter</span>
-          <span><i class="fa-brands fa-php"></i> PHP</span>
-          <span><i class="fa-brands fa-python"></i> Python</span>
-          <span><i class="fa-brands fa-java"></i> Java</span>
-          <span><i class="fa-solid fa-k"></i> Kotlin</span>
-          <span><i class="fa-solid fa-fire"></i> Firebase</span>
-          <span><i class="fa-solid fa-bolt"></i> Supabase</span>
-          <span><i class="fa-solid fa-database"></i> MySQL</span>
-          <!-- duplicate for seamless loop -->
-          <span><i class="fa-brands fa-html5"></i> HTML</span>
-          <span><i class="fa-brands fa-js"></i> JavaScript</span>
-          <span><i class="fa-solid fa-code"></i> TypeScript</span>
-          <span><i class="fa-brands fa-angular"></i> Angular</span>
-          <span><i class="fa-brands fa-laravel"></i> Laravel</span>
-          <span><i class="fa-solid fa-mobile-screen"></i> Flutter</span>
-          <span><i class="fa-brands fa-php"></i> PHP</span>
-          <span><i class="fa-brands fa-python"></i> Python</span>
-          <span><i class="fa-brands fa-java"></i> Java</span>
-          <span><i class="fa-solid fa-k"></i> Kotlin</span>
-          <span><i class="fa-solid fa-fire"></i> Firebase</span>
-          <span><i class="fa-solid fa-bolt"></i> Supabase</span>
-          <span><i class="fa-solid fa-database"></i> MySQL</span>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -282,17 +234,16 @@
   <section id="experience" class="section">
     <div class="container">
       <div class="section-head center" data-aos="fade-up">
-        <span class="section-kicker">// 03 — experience</span>
+        <span class="section-kicker">Experience</span>
         <h2 class="section-title">Where I've worked</h2>
       </div>
 
-      <div class="timeline">
-        <div class="tl-item" data-aos="fade-up">
-          <div class="tl-dot"><i class="fa-solid fa-headset"></i></div>
-          <div class="tl-content glass spotlight" data-tilt>
-            <span class="tl-date">Oct 2025 — Present</span>
+      <div class="xp-list">
+        <div class="xp-item" data-aos="fade-up">
+          <div class="xp-date">Oct 2025 — Present <span class="xp-now"><i class="fa-solid fa-circle" style="font-size:6px"></i> Now</span></div>
+          <div class="xp-main">
             <h3>Technical Support Specialist</h3>
-            <span class="tl-place">@ LCC Groups</span>
+            <span class="xp-place">LCC Groups</span>
             <ul>
               <li>Develop internal automation to streamline day-to-day operations.</li>
               <li>Assist in maintaining and improving existing systems.</li>
@@ -302,10 +253,9 @@
           </div>
         </div>
 
-        <div class="tl-item" data-aos="fade-up">
-          <div class="tl-dot"><i class="fa-solid fa-laptop-code"></i></div>
-          <div class="tl-content glass spotlight" data-tilt>
-            <span class="tl-date">Jan 2025 — Jun 2025</span>
+        <div class="xp-item" data-aos="fade-up">
+          <div class="xp-date">Jan 2025 — Jun 2025</div>
+          <div class="xp-main">
             <h3>Software Developer Trainee</h3>
             <ul>
               <li>Developed web systems collaboratively in a development team.</li>
@@ -315,10 +265,9 @@
           </div>
         </div>
 
-        <div class="tl-item" data-aos="fade-up">
-          <div class="tl-dot"><i class="fa-solid fa-cash-register"></i></div>
-          <div class="tl-content glass spotlight" data-tilt>
-            <span class="tl-date">Jun 2023 — Nov 2024</span>
+        <div class="xp-item" data-aos="fade-up">
+          <div class="xp-date">Jun 2023 — Nov 2024</div>
+          <div class="xp-main">
             <h3>Sales &amp; Service Associate</h3>
             <ul>
               <li>Assisted customers with inquiries and transactions.</li>
@@ -329,10 +278,9 @@
           </div>
         </div>
 
-        <div class="tl-item" data-aos="fade-up">
-          <div class="tl-dot"><i class="fa-solid fa-table-list"></i></div>
-          <div class="tl-content glass spotlight" data-tilt>
-            <span class="tl-date">Mar 2022 — Sep 2022</span>
+        <div class="xp-item" data-aos="fade-up">
+          <div class="xp-date">Mar 2022 — Sep 2022</div>
+          <div class="xp-main">
             <h3>Data Processor</h3>
             <ul>
               <li>Handled high-volume data entry with strong attention to accuracy and detail.</li>
@@ -346,17 +294,17 @@
   </section>
 
   <!-- ===================== PROJECTS ===================== -->
-  <section id="projects" class="section section-alt">
+  <section id="projects" class="section">
     <div class="container">
       <div class="section-head center" data-aos="fade-up">
-        <span class="section-kicker">// 04 — work</span>
+        <span class="section-kicker">Work</span>
         <h2 class="section-title">Featured projects</h2>
         <p class="section-lead">A selection of web and mobile applications I've designed and built.</p>
       </div>
       <div class="filters" id="project-filters" data-aos="fade-up">
-        <button class="filter-btn active" data-filter="all">all</button>
-        <button class="filter-btn" data-filter="web">web</button>
-        <button class="filter-btn" data-filter="mobile">mobile</button>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
       </div>
       <div class="projects-grid" id="projects-grid"></div>
     </div>
@@ -365,45 +313,26 @@
   <!-- ===================== CONTACT ===================== -->
   <section id="contact" class="section">
     <div class="container">
-      <div class="section-head center" data-aos="fade-up">
-        <span class="section-kicker">// 05 — contact</span>
-        <h2 class="section-title">Let's build something</h2>
-        <p class="section-lead">Have a project in mind or just want to say hi? Reach out anytime.</p>
+      <div class="contact-cta" data-aos="fade-up">
+        <span class="section-kicker">Contact</span>
+        <h2>Let's build something together.</h2>
+        <p>Have a project in mind, a role to fill, or just want to say hi? I'd love to hear from you.</p>
+        <a href="mailto:johnreydado@gmail.com" class="big-mail"><i class="fa-solid fa-envelope"></i> johnreydado@gmail.com</a>
       </div>
 
-      <div class="contact-grid">
-        <a href="mailto:johnreydado@gmail.com" class="contact-card glass spotlight" data-tilt data-aos="fade-up">
-          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-          <h3>Gmail</h3>
-          <p>johnreydado@gmail.com</p>
-          <span class="contact-go">send email <i class="fa-solid fa-arrow-right"></i></span>
+      <div class="contact-methods">
+        <a href="mailto:johnreydado@gmail.com" class="method" data-aos="fade-up">
+          <i class="fa-solid fa-envelope"></i><div><div class="m-label">gmail</div><div class="m-value">johnreydado@gmail.com</div></div>
         </a>
-        <a href="tel:+639123456789" class="contact-card glass spotlight" data-tilt data-aos="fade-up" data-aos-delay="80">
-          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-          <h3>Phone</h3>
-          <p>+63 912 345 6789</p>
-          <span class="contact-go">call now <i class="fa-solid fa-arrow-right"></i></span>
+        <a href="tel:+639123456789" class="method" data-aos="fade-up" data-aos-delay="60">
+          <i class="fa-solid fa-phone"></i><div><div class="m-label">phone</div><div class="m-value">+63 912 345 6789</div></div>
         </a>
-        <a href="https://www.facebook.com/johnrey.dado" target="_blank" rel="noopener" class="contact-card glass spotlight" data-tilt data-aos="fade-up" data-aos-delay="160">
-          <div class="contact-icon"><i class="fa-brands fa-facebook-f"></i></div>
-          <h3>Facebook</h3>
-          <p>@johnrey.dado</p>
-          <span class="contact-go">message me <i class="fa-solid fa-arrow-right"></i></span>
+        <a href="https://www.facebook.com/johnrey.dado" target="_blank" rel="noopener" class="method" data-aos="fade-up" data-aos-delay="120">
+          <i class="fa-brands fa-facebook-f"></i><div><div class="m-label">facebook</div><div class="m-value">@johnrey.dado</div></div>
         </a>
-        <a href="https://github.com/johnrey666" target="_blank" rel="noopener" class="contact-card glass spotlight" data-tilt data-aos="fade-up" data-aos-delay="240">
-          <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
-          <h3>GitHub</h3>
-          <p>@johnrey666</p>
-          <span class="contact-go">view code <i class="fa-solid fa-arrow-right"></i></span>
+        <a href="https://github.com/johnrey666" target="_blank" rel="noopener" class="method" data-aos="fade-up" data-aos-delay="180">
+          <i class="fa-brands fa-github"></i><div><div class="m-label">github</div><div class="m-value">@johnrey666</div></div>
         </a>
-      </div>
-
-      <div class="contact-banner" data-aos="zoom-in">
-        <div>
-          <h3>Prefer to chat with my AI assistant?</h3>
-          <p>Ask anything about my skills, projects, or experience — it answers for me 24/7.</p>
-        </div>
-        <button class="btn btn-grad" id="open-chat-cta" data-magnetic><i class="fa-solid fa-robot"></i> Chat with my AI</button>
       </div>
     </div>
   </section>
@@ -411,26 +340,22 @@
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="container footer-inner">
-      <a href="#home" class="brand" data-magnetic>
-        <span class="brand-mark">JR</span>
-        <span class="brand-text">John Rey<span class="dot">.</span></span>
-      </a>
+      <a href="#home" class="brand"><span class="brand-mark">JR</span><span>John Rey Dado</span></a>
       <div class="footer-socials">
         <a href="https://github.com/johnrey666" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.facebook.com/johnrey.dado" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="mailto:johnreydado@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         <a href="tel:+639123456789" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
       </div>
-      <p class="footer-note">© <span id="year"></span> John Rey Dado — designed &amp; built from scratch.</p>
+      <p class="footer-note">© <span id="year"></span> John Rey Dado</p>
     </div>
   </footer>
 
   <button id="back-to-top" class="icon-btn back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
   <!-- ===================== AI CHAT ===================== -->
-  <button id="chat-launcher" class="chat-launcher" aria-label="Open AI chat" data-magnetic>
-    <i class="fa-solid fa-robot"></i>
-    <span class="chat-launcher-badge">AI</span>
+  <button id="chat-launcher" class="chat-launcher" aria-label="Open AI chat">
+    <i class="fa-solid fa-robot"></i><span class="chat-launcher-badge">AI</span>
   </button>
   <div id="chat-window" class="chat-window" aria-live="polite">
     <div class="chat-header">

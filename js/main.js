@@ -1,108 +1,33 @@
 /* =====================================================================
-   John Rey Dado — Portfolio
-   Interactions: custom cursor · magnetic · 3D tilt · spotlight · orbit
+   John Rey Dado — Portfolio (clean build)
    ===================================================================== */
 (function () {
   'use strict';
 
-  var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (window.AOS) AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+  if (window.AOS) AOS.init({ duration: 650, easing: 'ease-out-cubic', once: true, offset: 60 });
 
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ================= THEME ================= */
+  /* ---------- Theme (light default) ---------- */
   var html = document.documentElement;
   var themeToggle = document.getElementById('theme-toggle');
   var saved = localStorage.getItem('jr-theme');
   if (saved) html.setAttribute('data-theme', saved);
   function syncThemeIcon() {
     if (!themeToggle) return;
-    var dark = html.getAttribute('data-theme') !== 'light';
-    themeToggle.innerHTML = dark ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+    var dark = html.getAttribute('data-theme') === 'dark';
+    themeToggle.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
   }
   syncThemeIcon();
   if (themeToggle) themeToggle.addEventListener('click', function () {
-    var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('jr-theme', next);
     syncThemeIcon();
   });
 
-  /* ================= CUSTOM CURSOR ================= */
-  if (finePointer) {
-    var dot = document.querySelector('.cursor-dot');
-    var ring = document.querySelector('.cursor-ring');
-    if (dot && ring) {
-      document.body.classList.add('has-cursor');
-      var mx = window.innerWidth / 2, my = window.innerHeight / 2;
-      var rx = mx, ry = my;
-      window.addEventListener('mousemove', function (e) {
-        mx = e.clientX; my = e.clientY;
-        dot.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)';
-      });
-      (function loop() {
-        rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
-        ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)';
-        requestAnimationFrame(loop);
-      })();
-      var hoverSel = 'a, button, [data-magnetic], .pill, .filter-btn, .node, input, .chip, .ov-btn';
-      document.addEventListener('mouseover', function (e) {
-        if (e.target.closest(hoverSel)) ring.classList.add('hovering');
-      });
-      document.addEventListener('mouseout', function (e) {
-        if (e.target.closest(hoverSel)) ring.classList.remove('hovering');
-      });
-      window.addEventListener('mousedown', function () { ring.classList.add('clicking'); });
-      window.addEventListener('mouseup', function () { ring.classList.remove('clicking'); });
-    }
-  }
-
-  /* ================= MAGNETIC ELEMENTS ================= */
-  if (finePointer && !reduceMotion) {
-    document.querySelectorAll('[data-magnetic]').forEach(function (el) {
-      el.addEventListener('mousemove', function (e) {
-        var r = el.getBoundingClientRect();
-        var x = e.clientX - (r.left + r.width / 2);
-        var y = e.clientY - (r.top + r.height / 2);
-        el.style.transform = 'translate(' + x * 0.25 + 'px,' + y * 0.35 + 'px)';
-      });
-      el.addEventListener('mouseleave', function () { el.style.transform = ''; });
-    });
-  }
-
-  /* ================= 3D TILT + SPOTLIGHT ================= */
-  function bindTilt(el) {
-    el.addEventListener('mousemove', function (e) {
-      var r = el.getBoundingClientRect();
-      var px = (e.clientX - r.left) / r.width;
-      var py = (e.clientY - r.top) / r.height;
-      el.style.setProperty('--mx', (px * 100) + '%');
-      el.style.setProperty('--my', (py * 100) + '%');
-      if (finePointer && !reduceMotion && el.hasAttribute('data-tilt')) {
-        var rotY = (px - 0.5) * 9;
-        var rotX = (0.5 - py) * 9;
-        el.style.transform = 'perspective(800px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)';
-      }
-    });
-    el.addEventListener('mouseleave', function () {
-      el.style.transform = '';
-      el.style.setProperty('--mx', '50%');
-      el.style.setProperty('--my', '50%');
-    });
-  }
-  document.querySelectorAll('[data-tilt], .spotlight').forEach(bindTilt);
-
-  /* ================= ORBIT pause on hover ================= */
-  var orbit = document.getElementById('orbit');
-  if (orbit) {
-    orbit.addEventListener('mouseenter', function () { orbit.classList.add('paused'); });
-    orbit.addEventListener('mouseleave', function () { orbit.classList.remove('paused'); });
-  }
-
-  /* ================= NAVBAR / SCROLL ================= */
+  /* ---------- Navbar / scroll ---------- */
   var navbar = document.getElementById('navbar');
   var navToggle = document.getElementById('nav-toggle');
   var navLinksWrap = document.getElementById('nav-links');
@@ -112,7 +37,7 @@
 
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
-    if (navbar) navbar.classList.toggle('scrolled', y > 30);
+    if (navbar) navbar.classList.toggle('scrolled', y > 24);
     if (backTop) backTop.classList.toggle('show', y > 500);
     var docH = document.documentElement.scrollHeight - window.innerHeight;
     if (progress) progress.style.width = (docH > 0 ? (y / docH) * 100 : 0) + '%';
@@ -129,10 +54,10 @@
   }
   if (backTop) backTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-  /* ================= TYPED ================= */
+  /* ---------- Typed ---------- */
   var typedEl = document.getElementById('typed');
   if (typedEl) {
-    var phrases = ['web apps.', 'mobile apps.', 'internal automation.', 'clean systems.'];
+    var phrases = ['web apps.', 'mobile apps.', 'automation.', 'clean systems.'];
     var pi = 0, ci = 0, del = false;
     (function loop() {
       var w = phrases[pi];
@@ -144,11 +69,10 @@
     })();
   }
 
-  /* ================= COUNTERS ================= */
+  /* ---------- Counters ---------- */
   function animateCounter(el) {
     var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-    var node = el.firstChild; // text node holding the number
-    var dur = 1400, start = null;
+    var node = el.firstChild, dur = 1400, start = null;
     function step(ts) {
       if (!start) start = ts;
       var p = Math.min((ts - start) / dur, 1);
@@ -158,15 +82,11 @@
     requestAnimationFrame(step);
   }
   var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      animateCounter(e.target);
-      io.unobserve(e.target);
-    });
+    entries.forEach(function (e) { if (e.isIntersecting) { animateCounter(e.target); io.unobserve(e.target); } });
   }, { threshold: 0.4 });
   document.querySelectorAll('[data-count]').forEach(function (el) { io.observe(el); });
 
-  /* ================= PROJECTS ================= */
+  /* ---------- Projects ---------- */
   function imgs(prefix, ext, count) {
     var a = [];
     for (var i = 1; i <= count; i++) a.push('images/portfolio/' + prefix + i + '.' + ext);
@@ -175,7 +95,7 @@
   var projects = [
     { title: 'Water Pipe Monitoring', category: 'web', label: 'web · iot',
       desc: 'Real-time monitoring system for water pipelines — dashboards, leak/flow alerts, and historical data tracking.',
-      tags: ['IoT', 'JavaScript', 'Realtime', 'Dashboard'],
+      tags: ['IoT', 'JavaScript', 'Realtime'],
       github: 'https://github.com/johnrey666/water_monitoring.git', gallery: imgs('w', 'png', 14) },
     { title: 'SeniorCare Connect', category: 'mobile', label: 'mobile',
       desc: 'A mobile app connecting seniors with caregivers — health reminders, profiles, and easy communication.',
@@ -187,28 +107,27 @@
       github: 'https://github.com/johnrey666/dado_firebase.git', gallery: imgs('m', 'png', 7) },
     { title: 'Creative Dental', category: 'web', label: 'web',
       desc: 'A dental clinic website with appointment booking, services showcase, and a modern responsive interface.',
-      tags: ['HTML', 'CSS', 'JavaScript', 'Booking'],
+      tags: ['HTML', 'CSS', 'JavaScript'],
       github: 'https://github.com/johnrey666/creative_dental.git', gallery: imgs('c', 'png', 8) },
     { title: 'Wastage Reporting', category: 'web', label: 'web',
       desc: 'A web system for logging, tracking, and analyzing material/food wastage with reports and visual analytics.',
-      tags: ['PHP', 'Laravel', 'MySQL', 'Analytics'], github: '', icon: 'fa-solid fa-recycle', ph: 'ph-grad-4', gallery: [] },
+      tags: ['PHP', 'Laravel', 'MySQL'], github: '', icon: 'fa-solid fa-recycle', ph: 'ph-grad-4', gallery: [] },
     { title: 'E-Portal Requisition', category: 'web', label: 'web',
       desc: 'An online requisition portal for submitting, approving, and tracking requests through a structured workflow.',
-      tags: ['PHP', 'Laravel', 'MySQL', 'Workflow'], github: '', icon: 'fa-solid fa-file-invoice', ph: 'ph-grad-3', gallery: [] },
+      tags: ['PHP', 'Laravel', 'MySQL'], github: '', icon: 'fa-solid fa-file-invoice', ph: 'ph-grad-3', gallery: [] },
     { title: 'PlaySpace', category: 'mobile', label: 'mobile',
       desc: 'A mobile app for discovering, booking, and managing play & sports spaces — maps, schedules, and reservations.',
-      tags: ['Flutter', 'Dart', 'Maps', 'Booking'], github: '', icon: 'fa-solid fa-futbol', ph: 'ph-grad-5', gallery: [] }
+      tags: ['Flutter', 'Dart', 'Maps'], github: '', icon: 'fa-solid fa-futbol', ph: 'ph-grad-5', gallery: [] }
   ];
 
   var grid = document.getElementById('projects-grid');
 
   function buildCard(p, idx) {
     var card = document.createElement('article');
-    card.className = 'project-card show spotlight';
+    card.className = 'project-card show';
     card.setAttribute('data-category', p.category);
-    card.setAttribute('data-tilt', '');
     card.setAttribute('data-aos', 'fade-up');
-    card.setAttribute('data-aos-delay', String((idx % 3) * 80));
+    card.setAttribute('data-aos-delay', String((idx % 3) * 70));
 
     var cover;
     if (p.gallery && p.gallery.length) {
@@ -256,7 +175,6 @@
 
   if (grid) {
     projects.forEach(function (p, i) { grid.appendChild(buildCard(p, i)); });
-    document.querySelectorAll('.project-card').forEach(bindTilt);
     if (window.AOS) AOS.refresh();
   }
 
@@ -272,7 +190,7 @@
     });
   });
 
-  /* ================= RESUME MODAL ================= */
+  /* ---------- Resume modal ---------- */
   var resumeBtn = document.getElementById('resumeButton');
   var resumeModal = document.getElementById('resumeModal');
   if (resumeBtn && resumeModal) {
@@ -286,7 +204,7 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideR(); });
   }
 
-  /* ================= AI CHAT ================= */
+  /* ---------- AI Chat ---------- */
   var launcher = document.getElementById('chat-launcher');
   var chatWin = document.getElementById('chat-window');
   var chatClose = document.getElementById('chat-close');
@@ -294,19 +212,17 @@
   var chatForm = document.getElementById('chat-form');
   var chatInput = document.getElementById('chat-text');
   var chatSuggest = document.getElementById('chat-suggestions');
-  var openChatCta = document.getElementById('open-chat-cta');
   var greeted = false;
 
   function openChat() {
     if (!chatWin) return;
     chatWin.classList.add('open');
     if (launcher) launcher.style.display = 'none';
-    if (!greeted) { greeted = true; botSay("Hey! 👋 I'm John Rey's AI assistant. Ask me about his skills, projects, experience, or how to reach him."); }
+    if (!greeted) { greeted = true; botSay("Hey! \uD83D\uDC4B I'm John Rey's AI assistant. Ask me about his skills, projects, experience, or how to reach him."); }
     setTimeout(function () { if (chatInput) chatInput.focus(); }, 250);
   }
   function closeChat() { if (!chatWin) return; chatWin.classList.remove('open'); if (launcher) launcher.style.display = 'grid'; }
   if (launcher) launcher.addEventListener('click', openChat);
-  if (openChatCta) openChatCta.addEventListener('click', openChat);
   if (chatClose) chatClose.addEventListener('click', closeChat);
 
   function scrollChat() { if (chatMsgs) chatMsgs.scrollTop = chatMsgs.scrollHeight; }
@@ -321,19 +237,19 @@
     { k: ['who', 'about', 'yourself', 'john', 'rey', 'dado', 'tell me about you'],
       a: "John Rey Dado is an IT graduate and <b>full-stack developer</b>, currently a <b>Technical Support Specialist at LCC Groups</b>. He builds web apps, cross-platform mobile apps, and internal automation — focused on clean code and reliable systems." },
     { k: ['skill', 'tech', 'stack', 'language', 'languages', 'framework', 'frameworks', 'database', 'tools', 'what can you'],
-      a: "His stack:<br>• <b>Languages:</b> HTML, CSS, JavaScript, TypeScript, PHP, Dart, Kotlin, Java, Python, SQL<br>• <b>Frameworks:</b> Angular, Laravel, Flutter, Node.js, Tailwind, Bootstrap, jQuery<br>• <b>Databases/Backend:</b> MySQL, PostgreSQL, SQLite, Firebase, Supabase<br>• <b>Also:</b> QA testing, data processing, Git/GitHub, Figma, REST APIs" },
+      a: "His stack:<br>\u2022 <b>Languages:</b> HTML, CSS, JavaScript, TypeScript, PHP, Dart, Kotlin, Java, Python, SQL<br>\u2022 <b>Frameworks:</b> Angular, Laravel, Flutter, Node.js, Tailwind, Bootstrap, jQuery<br>\u2022 <b>Databases/Backend:</b> MySQL, PostgreSQL, SQLite, Firebase, Supabase<br>\u2022 <b>Also:</b> QA testing, data processing, Git/GitHub, Figma, REST APIs" },
     { k: ['full stack', 'fullstack', 'full-stack', 'backend', 'frontend'],
-      a: "Yes — John Rey works <b>full-stack</b>: system development, system design, and debugging across front-end and back-end. Front-end with Angular &amp; modern JS/TS, back-end with Laravel/PHP and Node.js." },
+      a: "Yes — John Rey works <b>full-stack</b>: system development, design, and debugging across front-end and back-end. Front-end with Angular &amp; modern JS/TS, back-end with Laravel/PHP and Node.js." },
     { k: ['mobile', 'flutter', 'dart', 'android', 'ios', 'kotlin', 'native'],
       a: "He builds <b>cross-platform and native mobile apps</b> — mainly with <b>Flutter &amp; Dart</b> (and Kotlin/Java for native Android). Examples: SeniorCare Connect and PlaySpace." },
     { k: ['project', 'work you', 'built', 'portfolio', 'apps', 'made', 'projects'],
-      a: "He's built 7 projects:<br>1. <b>Water Pipe Monitoring</b> (Web/IoT)<br>2. <b>SeniorCare Connect</b> (Mobile)<br>3. <b>Mailah Lite</b> (Mobile)<br>4. <b>Creative Dental</b> (Web)<br>5. <b>Wastage Reporting</b> (Web)<br>6. <b>E-Portal Requisition</b> (Web)<br>7. <b>PlaySpace</b> (Mobile)<br>See the <a href='#projects'>Work</a> section!" },
+      a: "He's built 7 projects:<br>1. <b>Water Pipe Monitoring</b> (Web/IoT)<br>2. <b>SeniorCare Connect</b> (Mobile)<br>3. <b>Mailah Lite</b> (Web)<br>4. <b>Creative Dental</b> (Web)<br>5. <b>Wastage Reporting</b> (Web)<br>6. <b>E-Portal Requisition</b> (Web)<br>7. <b>PlaySpace</b> (Mobile)<br>See the <a href='#projects'>Work</a> section!" },
     { k: ['water', 'pipe', 'monitoring', 'iot'],
-      a: "<b>Water Pipe Monitoring</b> — a real-time system for water pipelines with dashboards, leak/flow alerts, and historical tracking. <a href='https://github.com/johnrey666/water_monitoring.git' target='_blank'>Code →</a>" },
+      a: "<b>Water Pipe Monitoring</b> — a real-time system for water pipelines with dashboards, leak/flow alerts, and historical tracking. <a href='https://github.com/johnrey666/water_monitoring.git' target='_blank'>Code \u2192</a>" },
     { k: ['senior', 'care', 'seniorcare'],
       a: "<b>SeniorCare Connect</b> — a Flutter mobile app connecting seniors with caregivers: health reminders, profiles, and simple communication." },
     { k: ['mailah', 'messaging', 'chat app', 'mail'],
-      a: "<b>Mailah Lite</b> — a lightweight Firebase-powered messaging/mailing app with real-time sync." },
+      a: "<b>Mailah Lite</b> — a lightweight Firebase-powered web messaging/mailing app with real-time sync." },
     { k: ['dental', 'creative', 'clinic', 'booking'],
       a: "<b>Creative Dental</b> — a dental clinic website with appointment booking and a modern responsive design." },
     { k: ['wastage', 'waste', 'reporting'],
@@ -343,23 +259,23 @@
     { k: ['playspace', 'play space', 'sports', 'play'],
       a: "<b>PlaySpace</b> — a Flutter mobile app to discover, book, and manage play &amp; sports spaces with maps and reservations." },
     { k: ['experience', 'job', 'career', 'history', 'background', 'worked', 'work history'],
-      a: "Experience:<br>• <b>Technical Support Specialist</b> @ LCC Groups (Oct 2025–present) — internal automation, system maintenance, user training, network/machine installs<br>• <b>Software Developer Trainee</b> (Jan–Jun 2025) — team web development &amp; QA<br>• <b>Sales &amp; Service Associate</b> (2023–2024)<br>• <b>Data Processor</b> (2022)<br>See the <a href='#experience'>Experience</a> section." },
+      a: "Experience:<br>\u2022 <b>Technical Support Specialist</b> @ LCC Groups (Oct 2025–present) — internal automation, system maintenance, user training, network/machine installs<br>\u2022 <b>Software Developer Trainee</b> (Jan–Jun 2025) — team web development &amp; QA<br>\u2022 <b>Sales &amp; Service Associate</b> (2023–2024)<br>\u2022 <b>Data Processor</b> (2022)<br>See the <a href='#experience'>Experience</a> section." },
     { k: ['current', 'currently', 'now', 'lcc', 'support', 'technical support'],
       a: "Right now John Rey is a <b>Technical Support Specialist at LCC Groups</b> (since Oct 2025) — developing internal automation, maintaining systems, training users, and handling network &amp; machine installation." },
     { k: ['qa', 'quality', 'testing', 'test', 'bug'],
-      a: "Yes — he does <b>Quality Assurance</b>: manual testing, bug tracking, and performance validation (gained partly as a Software Developer Trainee)." },
+      a: "Yes — he does <b>Quality Assurance</b>: manual testing, bug tracking, and performance validation." },
     { k: ['data', 'excel', 'entry', 'processing'],
       a: "He has <b>data processing</b> experience: high-volume data entry, validation, and database management using Excel, databases, and internal systems." },
     { k: ['education', 'study', 'school', 'degree', 'graduate', 'college'],
       a: "John Rey holds a <b>BS in Information Technology</b>, focusing on web development, mobile development, databases, and UI/UX." },
     { k: ['contact', 'reach', 'email', 'gmail', 'get in touch', 'hire', 'phone', 'number', 'call', 'facebook', 'fb', 'github'],
-      a: "Reach John Rey here:<br>• <b>Gmail:</b> <a href='mailto:johnreydado@gmail.com'>johnreydado@gmail.com</a><br>• <b>Phone:</b> <a href='tel:+639123456789'>+63 912 345 6789</a><br>• <b>Facebook:</b> <a href='https://www.facebook.com/johnrey.dado' target='_blank'>@johnrey.dado</a><br>• <b>GitHub:</b> <a href='https://github.com/johnrey666' target='_blank'>@johnrey666</a>" },
+      a: "Reach John Rey here:<br>\u2022 <b>Gmail:</b> <a href='mailto:johnreydado@gmail.com'>johnreydado@gmail.com</a><br>\u2022 <b>Phone:</b> <a href='tel:+639123456789'>+63 912 345 6789</a><br>\u2022 <b>Facebook:</b> <a href='https://www.facebook.com/johnrey.dado' target='_blank'>@johnrey.dado</a><br>\u2022 <b>GitHub:</b> <a href='https://github.com/johnrey666' target='_blank'>@johnrey666</a>" },
     { k: ['resume', 'cv', 'download'],
-      a: "Hit the <b>Resume</b> button in the hero, or <a href='images/JOHN-REY-DADO.pdf' target='_blank'>open it here →</a>" },
+      a: "Hit the <b>Resume</b> button in the hero, or <a href='images/JOHN-REY-DADO.pdf' target='_blank'>open it here \u2192</a>" },
     { k: ['hello', 'hi', 'hey', 'yo', 'good morning', 'good evening'],
-      a: "Hey there! 👋 Want to know about John Rey's <b>skills</b>, <b>projects</b>, <b>experience</b>, or <b>contact</b> info?" },
+      a: "Hey there! \uD83D\uDC4B Want to know about John Rey's <b>skills</b>, <b>projects</b>, <b>experience</b>, or <b>contact</b> info?" },
     { k: ['thank', 'thanks', 'cool', 'nice', 'awesome', 'great'],
-      a: "You're welcome! 😊 Ask me anything else — or reach John Rey via the <a href='#contact'>Contact</a> section." },
+      a: "You're welcome! \uD83D\uDE0A Ask me anything else — or reach John Rey via the <a href='#contact'>Contact</a> section." },
     { k: ['available', 'freelance', 'open', 'opportunity', 'work with'],
       a: "Yes — John Rey is <b>open to opportunities</b>! Fastest way to reach him: <a href='mailto:johnreydado@gmail.com'>johnreydado@gmail.com</a>." }
   ];
