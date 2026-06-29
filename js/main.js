@@ -93,13 +93,13 @@
     return a;
   }
   var projects = [
-    { title: 'Water Pipe Monitoring', category: 'web', label: 'web · iot',
+    { title: 'Water Pipe Monitoring', category: 'web', label: 'web · mobile',
       desc: 'Real-time monitoring system for water pipelines — dashboards, leak/flow alerts, and historical data tracking.',
-      tags: ['IoT', 'JavaScript', 'Realtime'],
+      tags: ['Flutter', 'Dart', 'Firebase', 'Maps'],
       github: 'https://github.com/johnrey666/water_monitoring.git', gallery: imgs('w', 'png', 14) },
     { title: 'SeniorCare Connect', category: 'mobile', label: 'mobile',
       desc: 'A mobile app connecting seniors with caregivers — health reminders, profiles, and easy communication.',
-      tags: ['Flutter', 'Dart', 'Firebase'],
+      tags: ['Flutter', 'Dart', 'Firebase', 'Maps'],
       github: 'https://github.com/johnrey666/seniorcare.git', gallery: imgs('sc', 'jpg', 7) },
     { title: 'Mailah Lite', category: 'web', label: 'web',
       desc: 'A lightweight Firebase-powered web messaging / mailing app with real-time sync and a clean interface.',
@@ -111,13 +111,13 @@
       github: 'https://github.com/johnrey666/creative_dental.git', gallery: imgs('c', 'png', 8) },
     { title: 'Wastage Reporting', category: 'web', label: 'web',
       desc: 'A web system for logging, tracking, and analyzing material/food wastage with reports and visual analytics.',
-      tags: ['PHP', 'Laravel', 'MySQL'], github: '', gallery: imgs('wr', 'png', 5) },
+      tags: ['HTML', 'CSS', 'Javascript'], github: '', gallery: imgs('wr', 'png', 5) },
     { title: 'E-Portal Requisition', category: 'web', label: 'web',
       desc: 'An online requisition portal for submitting, approving, and tracking requests through a structured workflow.',
-      tags: ['PHP', 'Laravel', 'MySQL'], github: '', gallery: imgs('ep', 'png', 5) },
+      tags: ['Angular', 'Appscript', 'Firebase'], github: '', gallery: imgs('ep', 'png', 5) },
     { title: 'PlaySpace', category: 'mobile', label: 'mobile',
       desc: 'A mobile app for discovering, booking, and managing play & sports spaces — maps, schedules, and reservations.',
-      tags: ['Flutter', 'Dart', 'Maps'], github: '', gallery: imgs('z', 'jpg', 6) }
+      tags: ['Flutter', 'Dart', 'Firebase'], github: '', gallery: imgs('z', 'jpg', 6) }
   ];
 
   var grid = document.getElementById('projects-grid');
