@@ -295,40 +295,38 @@
   if (chatForm) chatForm.addEventListener('submit', function (e) { e.preventDefault(); handleUser(chatInput.value); chatInput.value = ''; });
   if (chatSuggest) chatSuggest.addEventListener('click', function (e) { var c = e.target.closest('.chip'); if (c) { openChat(); handleUser(c.textContent); } });
 
-  /* ---------- Interactive pet dog ---------- */
-  var pet = document.getElementById('pet-dog');
-  if (pet) {
-    var dogEl = pet.querySelector('.dog');
-    var isTouch = window.matchMedia('(hover: none)').matches;
-    var boopT, touchT;
-    var startPet = function () { pet.classList.add('petting'); };
-    var stopPet = function () { pet.classList.remove('petting'); };
-    if (dogEl) {
-      dogEl.addEventListener('mouseenter', startPet);
-      dogEl.addEventListener('mouseleave', stopPet);
-      dogEl.addEventListener('click', function () {
-        pet.classList.add('petting', 'boop');
-        clearTimeout(boopT);
-        boopT = setTimeout(function () { pet.classList.remove('boop'); }, 520);
-        if (isTouch) { clearTimeout(touchT); touchT = setTimeout(stopPet, 1800); }
-      });
-    }
-
-    // Wander between walking and idle behaviors (sit, lie, look, yawn)
-    var rnd = function (min, max) { return min + Math.random() * (max - min); };
-    var actions = [
-      { cls: 'sitting', dur: function () { return rnd(4000, 7000); } },
-      { cls: 'lying',   dur: function () { return rnd(5000, 9000); } },
-      { cls: 'looking', dur: function () { return 2300; } },
-      { cls: 'yawning', dur: function () { return 1200; } }
-    ];
-    (function idle() {
-      setTimeout(function () {
-        var a = actions[Math.floor(Math.random() * actions.length)];
-        pet.classList.add(a.cls);
-        setTimeout(function () { pet.classList.remove(a.cls); idle(); }, a.dur());
-      }, rnd(5000, 9000));
-    })();
+ /* ---------- Interactive pet dog ---------- */
+var pet = document.getElementById('pet-dog');
+if (pet) {
+  var dogEl = pet.querySelector('.dog');
+  var isTouch = window.matchMedia('(hover: none)').matches;
+  var boopT, touchT;
+  var startPet = function () { pet.classList.add('petting'); };
+  var stopPet  = function () { pet.classList.remove('petting'); };
+  if (dogEl) {
+    dogEl.addEventListener('mouseenter', startPet);
+    dogEl.addEventListener('mouseleave', stopPet);
+    dogEl.addEventListener('click', function () {
+      pet.classList.add('petting', 'boop');
+      clearTimeout(boopT);
+      boopT = setTimeout(function () { pet.classList.remove('boop'); }, 560);
+      if (isTouch) { clearTimeout(touchT); touchT = setTimeout(stopPet, 1800); }
+    });
   }
+  var rnd = function (min, max) { return min + Math.random() * (max - min); };
+  var actions = [
+    { cls: 'sitting', dur: function () { return rnd(4000, 7000); } },
+    { cls: 'lying',   dur: function () { return rnd(5000, 9000); } },
+    { cls: 'looking', dur: function () { return 2400; } },
+    { cls: 'yawning', dur: function () { return 1300; } }
+  ];
+  (function idle() {
+    setTimeout(function () {
+      var a = actions[Math.floor(Math.random() * actions.length)];
+      pet.classList.add(a.cls);
+      setTimeout(function () { pet.classList.remove(a.cls); idle(); }, a.dur());
+    }, rnd(4500, 8500));
+  })();
+}
 
 })();
