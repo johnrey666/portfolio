@@ -271,6 +271,47 @@ ul { list-style: none; }
 .back-to-top { position: fixed; right: 26px; bottom: 26px; z-index: 900; opacity: 0; visibility: hidden; transform: translateY(16px); transition: all .3s ease; box-shadow: var(--shadow); }
 .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 
+/* ---------- Interactive pet dog ---------- */
+.pet { position: fixed; right: 100px; bottom: 14px; z-index: 940; width: 130px; height: 104px; pointer-events: none; }
+.pet-walker { position: absolute; left: 0; bottom: 0; animation: dogWalk 16s linear infinite; }
+.pet.petting .pet-walker { animation-play-state: paused; }
+.pet-bob { animation: dogBob .6s ease-in-out infinite alternate; }
+.pet.boop .pet-bob { animation: dogBoop .5s ease; }
+.dog { width: 86px; height: auto; display: block; pointer-events: auto; cursor: pointer; filter: drop-shadow(0 6px 5px rgba(0,0,0,.18)); }
+.dog-tail { transform-box: fill-box; transform-origin: 92% 78%; animation: dogWag .42s ease-in-out infinite alternate; }
+.pet.petting .dog-tail { animation-duration: .18s; }
+.leg { transform-box: fill-box; transform-origin: top center; }
+.leg-a { animation: dogStep .5s ease-in-out infinite alternate; }
+.leg-b { animation: dogStep .5s ease-in-out infinite alternate-reverse; }
+.pet.petting .leg { animation-play-state: paused; }
+
+/* sit / walk states */
+.dog-inner { transform-box: fill-box; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.sit-only { display: none; }
+.dog-eye { transform-box: fill-box; transform-origin: center; animation: dogBlink 5s infinite; }
+.pet.sitting .pet-walker { animation-play-state: paused; }
+.pet.sitting .leg { animation-play-state: paused; }
+.pet.sitting .stand-only { display: none; }
+.pet.sitting .sit-only { display: block; }
+.pet.sitting .dog-inner { transform: translateY(4px) rotate(-3deg); transform-origin: 30% 96%; }
+.pet.sitting .dog-tail { animation-duration: .6s; }
+.pet-bubble {
+  position: absolute; bottom: 100%; left: 50%; margin-bottom: 4px;
+  transform: translate(-50%, 8px) scale(.4); transform-origin: center bottom; opacity: 0;
+  transition: opacity .25s ease, transform .3s cubic-bezier(.2,1.5,.4,1);
+  background: var(--bg-2); border: 1px solid var(--border); color: #ef4444; font-size: 15px;
+  padding: 8px 12px; border-radius: 14px; border-bottom-left-radius: 4px; box-shadow: var(--shadow); pointer-events: none;
+}
+.pet-bubble::after { content: ""; position: absolute; bottom: -6px; left: 16px; width: 11px; height: 11px; background: var(--bg-2); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transform: rotate(45deg); }
+.pet.petting .pet-bubble { opacity: 1; transform: translate(-50%, -2px) scale(1); }
+
+@keyframes dogWalk { 0%{transform:translateX(0) scaleX(1)} 45%{transform:translateX(40px) scaleX(1)} 50%{transform:translateX(40px) scaleX(-1)} 95%{transform:translateX(0) scaleX(-1)} 100%{transform:translateX(0) scaleX(1)} }
+@keyframes dogBob { from{transform:translateY(0)} to{transform:translateY(-3px)} }
+@keyframes dogWag { from{transform:rotate(-14deg)} to{transform:rotate(16deg)} }
+@keyframes dogStep { from{transform:rotate(-13deg)} to{transform:rotate(13deg)} }
+@keyframes dogBoop { 0%{transform:translateY(0)} 30%{transform:translateY(-14px)} 55%{transform:translateY(0)} 75%{transform:translateY(-5px)} 100%{transform:translateY(0)} }
+@keyframes dogBlink { 0%,93%,100%{transform:scaleY(1)} 96%{transform:scaleY(.1)} }
+
 /* ---------- AI Chat ---------- */
 .chat-launcher { position: fixed; right: 26px; bottom: 84px; z-index: 950; width: 58px; height: 58px; border-radius: 16px; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-size: 22px; box-shadow: var(--shadow); transition: transform .25s ease; }
 .chat-launcher:hover { transform: translateY(-3px) scale(1.04); }
@@ -363,6 +404,8 @@ ul { list-style: none; }
   .chat-window { right: 10px; left: 10px; width: auto; height: min(72vh, 520px); bottom: 84px; }
   .chat-launcher { right: 16px; bottom: 16px; }
   .back-to-top { right: 16px; bottom: 80px; }
+  .pet { right: 86px; bottom: 10px; width: 112px; height: 92px; }
+  .dog { width: 70px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

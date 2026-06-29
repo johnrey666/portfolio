@@ -111,13 +111,13 @@
       github: 'https://github.com/johnrey666/creative_dental.git', gallery: imgs('c', 'png', 8) },
     { title: 'Wastage Reporting', category: 'web', label: 'web',
       desc: 'A web system for logging, tracking, and analyzing material/food wastage with reports and visual analytics.',
-      tags: ['PHP', 'Laravel', 'MySQL'], github: '', icon: 'fa-solid fa-recycle', ph: 'ph-grad-4', gallery: [] },
+      tags: ['PHP', 'Laravel', 'MySQL'], github: '', gallery: imgs('wr', 'png', 5) },
     { title: 'E-Portal Requisition', category: 'web', label: 'web',
       desc: 'An online requisition portal for submitting, approving, and tracking requests through a structured workflow.',
-      tags: ['PHP', 'Laravel', 'MySQL'], github: '', icon: 'fa-solid fa-file-invoice', ph: 'ph-grad-3', gallery: [] },
+      tags: ['PHP', 'Laravel', 'MySQL'], github: '', gallery: imgs('ep', 'png', 5) },
     { title: 'PlaySpace', category: 'mobile', label: 'mobile',
       desc: 'A mobile app for discovering, booking, and managing play & sports spaces — maps, schedules, and reservations.',
-      tags: ['Flutter', 'Dart', 'Maps'], github: '', icon: 'fa-solid fa-futbol', ph: 'ph-grad-5', gallery: [] }
+      tags: ['Flutter', 'Dart', 'Maps'], github: '', gallery: imgs('z', 'jpg', 6) }
   ];
 
   var grid = document.getElementById('projects-grid');
@@ -294,5 +294,34 @@
 
   if (chatForm) chatForm.addEventListener('submit', function (e) { e.preventDefault(); handleUser(chatInput.value); chatInput.value = ''; });
   if (chatSuggest) chatSuggest.addEventListener('click', function (e) { var c = e.target.closest('.chip'); if (c) { openChat(); handleUser(c.textContent); } });
+
+  /* ---------- Interactive pet dog ---------- */
+  var pet = document.getElementById('pet-dog');
+  if (pet) {
+    var dogEl = pet.querySelector('.dog');
+    var isTouch = window.matchMedia('(hover: none)').matches;
+    var boopT, touchT;
+    var startPet = function () { pet.classList.add('petting'); };
+    var stopPet = function () { pet.classList.remove('petting'); };
+    if (dogEl) {
+      dogEl.addEventListener('mouseenter', startPet);
+      dogEl.addEventListener('mouseleave', stopPet);
+      dogEl.addEventListener('click', function () {
+        pet.classList.add('petting', 'boop');
+        clearTimeout(boopT);
+        boopT = setTimeout(function () { pet.classList.remove('boop'); }, 520);
+        if (isTouch) { clearTimeout(touchT); touchT = setTimeout(stopPet, 1800); }
+      });
+    }
+
+    // Alternate between walking and sitting
+    var rnd = function (min, max) { return min + Math.random() * (max - min); };
+    (function cycle() {
+      setTimeout(function () {
+        pet.classList.add('sitting');
+        setTimeout(function () { pet.classList.remove('sitting'); cycle(); }, rnd(4000, 7500));
+      }, rnd(6000, 11000));
+    })();
+  }
 
 })();
