@@ -285,16 +285,37 @@ ul { list-style: none; }
 .leg-b { animation: dogStep .5s ease-in-out infinite alternate-reverse; }
 .pet.petting .leg { animation-play-state: paused; }
 
-/* sit / walk states */
-.dog-inner { transform-box: fill-box; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
-.sit-only { display: none; }
+/* ----- dog poses & behaviors ----- */
+.dog-inner { transform-box: fill-box; transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.dog-head { transform-box: fill-box; transform-origin: 36% 92%; transition: transform .4s ease; }
 .dog-eye { transform-box: fill-box; transform-origin: center; animation: dogBlink 5s infinite; }
-.pet.sitting .pet-walker { animation-play-state: paused; }
-.pet.sitting .leg { animation-play-state: paused; }
+.sit-only, .lie-only, .dog-yawn { display: none; }
+
+/* pause walking during any idle action */
+.pet.sitting .pet-walker, .pet.lying .pet-walker, .pet.looking .pet-walker, .pet.yawning .pet-walker { animation-play-state: paused; }
+.pet.sitting .leg, .pet.lying .leg, .pet.looking .leg, .pet.yawning .leg { animation-play-state: paused; }
+
+/* sit */
 .pet.sitting .stand-only { display: none; }
 .pet.sitting .sit-only { display: block; }
 .pet.sitting .dog-inner { transform: translateY(4px) rotate(-3deg); transform-origin: 30% 96%; }
 .pet.sitting .dog-tail { animation-duration: .6s; }
+
+/* lie down */
+.pet.lying .stand-only, .pet.lying .sit-only, .pet.lying .front-legs { display: none; }
+.pet.lying .lie-only { display: block; }
+.pet.lying .dog-inner { transform: translateY(13px) scaleY(.82); transform-origin: center bottom; }
+.pet.lying .dog-head { transform: translateY(2px) rotate(3deg); }
+.pet.lying .dog-tail { animation-duration: .8s; }
+
+/* look around (one-shot) */
+.pet.looking .dog-head { animation: dogLook 2.3s ease-in-out; }
+
+/* yawn (one-shot) */
+.pet.yawning .dog-mouth { display: none; }
+.pet.yawning .dog-yawn { display: block; }
+.pet.yawning .dog-eye { animation: none; transform: scaleY(.22); }
+.pet.yawning .dog-head { animation: dogYawn 1.2s ease; }
 .pet-bubble {
   position: absolute; bottom: 100%; left: 50%; margin-bottom: 4px;
   transform: translate(-50%, 8px) scale(.4); transform-origin: center bottom; opacity: 0;
@@ -311,6 +332,8 @@ ul { list-style: none; }
 @keyframes dogStep { from{transform:rotate(-13deg)} to{transform:rotate(13deg)} }
 @keyframes dogBoop { 0%{transform:translateY(0)} 30%{transform:translateY(-14px)} 55%{transform:translateY(0)} 75%{transform:translateY(-5px)} 100%{transform:translateY(0)} }
 @keyframes dogBlink { 0%,93%,100%{transform:scaleY(1)} 96%{transform:scaleY(.1)} }
+@keyframes dogLook { 0%{transform:rotate(0)} 22%{transform:rotate(-13deg)} 50%{transform:rotate(11deg)} 78%{transform:rotate(-5deg)} 100%{transform:rotate(0)} }
+@keyframes dogYawn { 0%{transform:rotate(0)} 35%{transform:rotate(-9deg)} 72%{transform:rotate(-9deg)} 100%{transform:rotate(0)} }
 
 /* ---------- AI Chat ---------- */
 .chat-launcher { position: fixed; right: 26px; bottom: 84px; z-index: 950; width: 58px; height: 58px; border-radius: 16px; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font-size: 22px; box-shadow: var(--shadow); transition: transform .25s ease; }

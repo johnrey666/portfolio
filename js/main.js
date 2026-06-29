@@ -314,13 +314,20 @@
       });
     }
 
-    // Alternate between walking and sitting
+    // Wander between walking and idle behaviors (sit, lie, look, yawn)
     var rnd = function (min, max) { return min + Math.random() * (max - min); };
-    (function cycle() {
+    var actions = [
+      { cls: 'sitting', dur: function () { return rnd(4000, 7000); } },
+      { cls: 'lying',   dur: function () { return rnd(5000, 9000); } },
+      { cls: 'looking', dur: function () { return 2300; } },
+      { cls: 'yawning', dur: function () { return 1200; } }
+    ];
+    (function idle() {
       setTimeout(function () {
-        pet.classList.add('sitting');
-        setTimeout(function () { pet.classList.remove('sitting'); cycle(); }, rnd(4000, 7500));
-      }, rnd(6000, 11000));
+        var a = actions[Math.floor(Math.random() * actions.length)];
+        pet.classList.add(a.cls);
+        setTimeout(function () { pet.classList.remove(a.cls); idle(); }, a.dur());
+      }, rnd(5000, 9000));
     })();
   }
 
