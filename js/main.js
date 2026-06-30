@@ -137,7 +137,6 @@
         '<span class="cat-badge">' + p.label + '</span>' +
         '<div class="project-overlay">' +
           '<button class="ov-btn js-gallery" title="View gallery"><i class="fa-solid fa-images"></i></button>' +
-          (p.github ? '<a class="ov-btn" href="' + p.github + '" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>' : '') +
         '</div></div>';
     } else {
       cover = '<div class="project-cover placeholder ' + (p.ph || 'ph-grad-1') + '">' +
@@ -148,9 +147,7 @@
     var tags = p.tags.map(function (t) { return '<span>' + t + '</span>'; }).join('');
     var links = '<div class="project-links">';
     if (p.gallery && p.gallery.length) links += '<a href="#" class="js-gallery"><i class="fa-solid fa-images"></i> Gallery</a>';
-    links += p.github
-      ? '<a href="' + p.github + '" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>'
-      : '<a href="#contact"><i class="fa-solid fa-circle-info"></i> Ask me</a>';
+    links += '<a href="#contact"><i class="fa-solid fa-circle-info"></i> Ask me</a>';
     links += '</div>';
 
     card.innerHTML = cover +
@@ -164,8 +161,7 @@
         jQuery.magnificPopup.open({
           items: items, type: 'image',
           gallery: { enabled: true, navigateByImgClick: true },
-          mainClass: 'mfp-with-zoom', image: { verticalFit: true },
-          zoom: { enabled: true, duration: 300 }
+          image: { verticalFit: true }
         });
       };
       card.querySelectorAll('.js-gallery').forEach(function (b) { b.addEventListener('click', open); });
@@ -245,7 +241,7 @@
     { k: ['project', 'work you', 'built', 'portfolio', 'apps', 'made', 'projects'],
       a: "He's built 7 projects:<br>1. <b>Water Pipe Monitoring</b> (Web/IoT)<br>2. <b>SeniorCare Connect</b> (Mobile)<br>3. <b>Mailah Lite</b> (Web)<br>4. <b>Creative Dental</b> (Web)<br>5. <b>Wastage Reporting</b> (Web)<br>6. <b>E-Portal Requisition</b> (Web)<br>7. <b>PlaySpace</b> (Mobile)<br>See the <a href='#projects'>Work</a> section!" },
     { k: ['water', 'pipe', 'monitoring', 'iot'],
-      a: "<b>Water Pipe Monitoring</b> — a real-time system for water pipelines with dashboards, leak/flow alerts, and historical tracking. <a href='https://github.com/johnrey666/water_monitoring.git' target='_blank'>Code \u2192</a>" },
+      a: "<b>Water Pipe Monitoring</b> — a real-time system for water pipelines with dashboards, leak/flow alerts, and historical tracking." },
     { k: ['senior', 'care', 'seniorcare'],
       a: "<b>SeniorCare Connect</b> — a Flutter mobile app connecting seniors with caregivers: health reminders, profiles, and simple communication." },
     { k: ['mailah', 'messaging', 'chat app', 'mail'],
