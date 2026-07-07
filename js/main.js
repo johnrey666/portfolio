@@ -93,6 +93,10 @@
     return a;
   }
   var projects = [
+    { title: 'GoodCatch', category: 'web', label: 'web',
+      desc: 'A modern web platform built with Next.js — responsive UI, fast performance, and a polished user experience.',
+      tags: ['Next.js', 'React', 'TypeScript'],
+      github: '', gallery: imgs('gc', 'png', 7) },
     { title: 'Water Pipe Monitoring', category: 'web', label: 'web · mobile',
       desc: 'Real-time monitoring system for water pipelines — dashboards, leak/flow alerts, and historical data tracking.',
       tags: ['Flutter', 'Dart', 'Firebase', 'Maps'],
@@ -239,7 +243,9 @@
     { k: ['mobile', 'flutter', 'dart', 'android', 'ios', 'kotlin', 'native'],
       a: "He builds <b>cross-platform and native mobile apps</b> — mainly with <b>Flutter &amp; Dart</b> (and Kotlin/Java for native Android). Examples: SeniorCare Connect and PlaySpace." },
     { k: ['project', 'work you', 'built', 'portfolio', 'apps', 'made', 'projects'],
-      a: "He's built 7 projects:<br>1. <b>Water Pipe Monitoring</b> (Web/IoT)<br>2. <b>SeniorCare Connect</b> (Mobile)<br>3. <b>Mailah Lite</b> (Web)<br>4. <b>Creative Dental</b> (Web)<br>5. <b>Wastage Reporting</b> (Web)<br>6. <b>E-Portal Requisition</b> (Web)<br>7. <b>PlaySpace</b> (Mobile)<br>See the <a href='#projects'>Work</a> section!" },
+      a: "He's built 8 projects:<br>1. <b>GoodCatch</b> (Web/Next.js)<br>2. <b>Water Pipe Monitoring</b> (Web/IoT)<br>3. <b>SeniorCare Connect</b> (Mobile)<br>4. <b>Mailah Lite</b> (Web)<br>5. <b>Creative Dental</b> (Web)<br>6. <b>Wastage Reporting</b> (Web)<br>7. <b>E-Portal Requisition</b> (Web)<br>8. <b>PlaySpace</b> (Mobile)<br>See the <a href='#projects'>Work</a> section!" },
+    { k: ['goodcatch', 'good catch'],
+      a: "<b>GoodCatch</b> — a modern web platform built with Next.js, featuring a responsive UI, fast performance, and a polished user experience." },
     { k: ['water', 'pipe', 'monitoring', 'iot'],
       a: "<b>Water Pipe Monitoring</b> — a real-time system for water pipelines with dashboards, leak/flow alerts, and historical tracking." },
     { k: ['senior', 'care', 'seniorcare'],
@@ -264,8 +270,8 @@
       a: "He has <b>data processing</b> experience: high-volume data entry, validation, and database management using Excel, databases, and internal systems." },
     { k: ['education', 'study', 'school', 'degree', 'graduate', 'college'],
       a: "John Rey holds a <b>BS in Information Technology</b>, focusing on web development, mobile development, databases, and UI/UX." },
-    { k: ['contact', 'reach', 'email', 'gmail', 'get in touch', 'hire', 'phone', 'number', 'call', 'facebook', 'fb', 'github'],
-      a: "Reach John Rey here:<br>\u2022 <b>Gmail:</b> <a href='mailto:johnreydado@gmail.com'>johnreydado@gmail.com</a><br>\u2022 <b>Phone:</b> <a href='tel:+639123456789'>+63 912 345 6789</a><br>\u2022 <b>Facebook:</b> <a href='https://www.facebook.com/johnrey.dado' target='_blank'>@johnrey.dado</a><br>\u2022 <b>GitHub:</b> <a href='https://github.com/johnrey666' target='_blank'>@johnrey666</a>" },
+    { k: ['contact', 'reach', 'email', 'gmail', 'get in touch', 'hire', 'phone', 'number', 'call', 'facebook', 'fb', 'github', 'linkedin'],
+      a: "Reach John Rey here:<br>\u2022 <b>Gmail:</b> <a href='mailto:johnreydado3@gmail.com'>johnreydado3@gmail.com</a><br>\u2022 <b>Phone:</b> <a href='tel:+639853886411'>09853886411</a><br>\u2022 <b>Facebook:</b> <a href='https://www.facebook.com/johnrey.dado.2025' target='_blank'>johnrey.dado.2025</a><br>\u2022 <b>LinkedIn:</b> <a href='https://www.linkedin.com/in/john-rey-dado/' target='_blank'>john-rey-dado</a><br>\u2022 <b>GitHub:</b> <a href='https://github.com/johnrey666' target='_blank'>@johnrey666</a>" },
     { k: ['resume', 'cv', 'download'],
       a: "Hit the <b>Resume</b> button in the hero, or <a href='images/JOHN-REY-DADO.pdf' target='_blank'>open it here \u2192</a>" },
     { k: ['hello', 'hi', 'hey', 'yo', 'good morning', 'good evening'],
@@ -273,7 +279,7 @@
     { k: ['thank', 'thanks', 'cool', 'nice', 'awesome', 'great'],
       a: "You're welcome! \uD83D\uDE0A Ask me anything else — or reach John Rey via the <a href='#contact'>Contact</a> section." },
     { k: ['available', 'freelance', 'open', 'opportunity', 'work with'],
-      a: "Yes — John Rey is <b>open to opportunities</b>! Fastest way to reach him: <a href='mailto:johnreydado@gmail.com'>johnreydado@gmail.com</a>." }
+      a: "Yes — John Rey is <b>open to opportunities</b>! Fastest way to reach him: <a href='mailto:johnreydado3@gmail.com'>johnreydado3@gmail.com</a>." }
   ];
 
   function answer(q) {
@@ -284,7 +290,7 @@
       if (sc > score) { score = sc; best = e; }
     });
     return (best && score > 0) ? best.a
-      : "Good question! I can tell you about John Rey's <b>skills</b>, <b>projects</b>, <b>experience</b>, <b>education</b>, or <b>contact</b> details. Or email him: <a href='mailto:johnreydado@gmail.com'>johnreydado@gmail.com</a>.";
+      : "Good question! I can tell you about John Rey's <b>skills</b>, <b>projects</b>, <b>experience</b>, <b>education</b>, or <b>contact</b> details. Or email him: <a href='mailto:johnreydado3@gmail.com'>johnreydado3@gmail.com</a>.";
   }
   function handleUser(t) { t = (t || '').trim(); if (!t) return; addMsg(t, 'user'); botSay(answer(t)); }
 

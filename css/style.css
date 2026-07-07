@@ -252,7 +252,7 @@ ul { list-style: none; }
 .contact-cta p { color: var(--muted); margin-bottom: 28px; font-size: 17px; }
 .contact-cta .big-mail { display: inline-flex; align-items: center; gap: 12px; font-family: var(--display); font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 600; color: var(--heading); padding-bottom: 6px; border-bottom: 2px solid var(--accent); transition: color .2s ease; }
 .contact-cta .big-mail:hover { color: var(--accent); }
-.contact-methods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.contact-methods { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
 .method { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform .2s ease, border-color .2s ease; }
 .method:hover { transform: translateY(-4px); border-color: var(--accent); }
 .method i { width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-size: 17px; flex-shrink: 0; }
