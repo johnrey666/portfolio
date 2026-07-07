@@ -120,7 +120,7 @@
       desc: 'An online requisition portal for submitting, approving, and tracking requests through a structured workflow.',
       tags: ['Angular', 'Appscript', 'Firebase'], github: '', gallery: imgs('ep', 'png', 5) },
     { title: 'PlaySpace', category: 'mobile', label: 'mobile',
-      desc: 'A mobile app for discovering, booking, and managing play & sports spaces — maps, schedules, and reservations.',
+      desc: 'A mobile app for uploading social life, chatting, and choosing/playing multiple multiplayer games with friends and family.',
       tags: ['Flutter', 'Dart', 'Firebase'], github: '', gallery: imgs('z', 'jpg', 6) }
   ];
 
@@ -245,7 +245,7 @@
     { k: ['project', 'work you', 'built', 'portfolio', 'apps', 'made', 'projects'],
       a: "He's built 8 projects:<br>1. <b>GoodCatch</b> (Web/Next.js)<br>2. <b>Water Pipe Monitoring</b> (Web/IoT)<br>3. <b>SeniorCare Connect</b> (Mobile)<br>4. <b>Mailah Lite</b> (Web)<br>5. <b>Creative Dental</b> (Web)<br>6. <b>Wastage Reporting</b> (Web)<br>7. <b>E-Portal Requisition</b> (Web)<br>8. <b>PlaySpace</b> (Mobile)<br>See the <a href='#projects'>Work</a> section!" },
     { k: ['goodcatch', 'good catch'],
-      a: "<b>GoodCatch</b> — a modern web platform built with Next.js, featuring a responsive UI, fast performance, and a polished user experience." },
+      a: "<b>GoodCatch</b> — a modern web e-commerce platform built with Next.js, featuring a responsive UI, fast performance, and a polished user experience." },
     { k: ['water', 'pipe', 'monitoring', 'iot'],
       a: "<b>Water Pipe Monitoring</b> — a real-time system for water pipelines with dashboards, leak/flow alerts, and historical tracking." },
     { k: ['senior', 'care', 'seniorcare'],
