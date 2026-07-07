@@ -97,22 +97,6 @@
       desc: 'A modern web platform built with Next.js — responsive UI, fast performance, and a polished user experience.',
       tags: ['Next.js', 'React', 'TypeScript'],
       github: '', gallery: imgs('gc', 'png', 7) },
-    { title: 'Water Pipe Monitoring', category: 'web', label: 'web · mobile',
-      desc: 'Real-time monitoring system for water pipelines — dashboards, leak/flow alerts, and historical data tracking.',
-      tags: ['Flutter', 'Dart', 'Firebase', 'Maps'],
-      github: 'https://github.com/johnrey666/water_monitoring.git', gallery: ['images/portfolio/wmlogo.png'].concat(imgs('w', 'png', 14)) },
-    { title: 'SeniorCare Connect', category: 'mobile', label: 'mobile',
-      desc: 'A mobile app connecting seniors with caregivers — health reminders, profiles, and easy communication.',
-      tags: ['Flutter', 'Dart', 'Firebase', 'Maps'],
-      github: 'https://github.com/johnrey666/seniorcare.git', gallery: ['images/portfolio/sclogo.png'].concat(imgs('sc', 'jpg', 7)) },
-    { title: 'Mailah Lite', category: 'web', label: 'web',
-      desc: 'A lightweight Firebase-powered web messaging / mailing app with real-time sync and a clean interface.',
-      tags: ['JavaScript', 'Firebase', 'Realtime DB'],
-      github: 'https://github.com/johnrey666/dado_firebase.git', gallery: imgs('m', 'png', 7) },
-    { title: 'Creative Dental', category: 'web', label: 'web',
-      desc: 'A dental clinic website with appointment booking, services showcase, and a modern responsive interface.',
-      tags: ['HTML', 'CSS', 'JavaScript'],
-      github: 'https://github.com/johnrey666/creative_dental.git', gallery: imgs('c', 'png', 8) },
     { title: 'Wastage Reporting', category: 'web', label: 'web',
       desc: 'A web system for logging, tracking, and analyzing material/food wastage with reports and visual analytics.',
       tags: ['HTML', 'CSS', 'Javascript'], github: '', gallery: imgs('wr', 'png', 5) },
@@ -121,7 +105,29 @@
       tags: ['Angular', 'Appscript', 'Firebase'], github: '', gallery: imgs('ep', 'png', 5) },
     { title: 'PlaySpace', category: 'mobile', label: 'mobile',
       desc: 'A mobile app for uploading social life, chatting, and choosing/playing multiple multiplayer games with friends and family.',
-      tags: ['Flutter', 'Dart', 'Firebase'], github: '', gallery: imgs('z', 'jpg', 6) }
+      tags: ['Flutter', 'Dart', 'Firebase'], github: '', gallery: imgs('z', 'jpg', 6) },
+    { title: 'SeniorCare Connect', category: 'mobile', label: 'mobile',
+      desc: 'A mobile app connecting seniors with caregivers — health reminders, profiles, and easy communication.',
+      tags: ['Flutter', 'Dart', 'Firebase', 'Maps'],
+      github: 'https://github.com/johnrey666/seniorcare.git',
+      cover: 'images/portfolio/sclogo.png', gallery: imgs('sc', 'jpg', 7) },
+    { title: 'ZeusGym Fitness', category: 'mobile', label: 'mobile',
+      desc: 'A mobile app for suggesting workouts and tracking fitness progress.',
+      tags: ['Flutter', 'Dart', 'Firebase'],
+      github: '', cover: 'images/portfolio/zelogo.png', gallery: imgs('ze', 'png', 10) },
+    { title: 'Creative Dental', category: 'web', label: 'web',
+      desc: 'A dental clinic website with appointment booking, services showcase, and a modern responsive interface.',
+      tags: ['HTML', 'CSS', 'JavaScript'],
+      github: 'https://github.com/johnrey666/creative_dental.git', gallery: imgs('c', 'png', 8) },
+    { title: 'Mailah Lite', category: 'web', label: 'web',
+      desc: 'A lightweight Firebase-powered web messaging / mailing app with real-time sync and a clean interface.',
+      tags: ['JavaScript', 'Firebase', 'Realtime DB'],
+      github: 'https://github.com/johnrey666/dado_firebase.git', gallery: imgs('m', 'png', 7) },
+    { title: 'Water Pipe Monitoring', category: 'web mobile', label: 'web · mobile',
+      desc: 'Real-time monitoring system for water pipelines — dashboards, leak/flow alerts, and historical data tracking.',
+      tags: ['Flutter', 'Dart', 'Firebase', 'Maps'],
+      github: 'https://github.com/johnrey666/water_monitoring.git',
+      cover: 'images/portfolio/wmlogo.png', gallery: imgs('w', 'png', 14) }
   ];
 
   var grid = document.getElementById('projects-grid');
@@ -133,14 +139,17 @@
     card.setAttribute('data-aos', 'fade-up');
     card.setAttribute('data-aos-delay', String((idx % 3) * 70));
 
+    var coverSrc = p.cover || (p.gallery && p.gallery.length ? p.gallery[0] : null);
+    var hasGallery = p.gallery && p.gallery.length;
+
     var cover;
-    if (p.gallery && p.gallery.length) {
+    if (coverSrc) {
       cover = '<div class="project-cover">' +
-        '<div class="cover-blur" style="background-image:url(\'' + p.gallery[0] + '\')"></div>' +
-        '<img src="' + p.gallery[0] + '" alt="' + p.title + '" loading="lazy">' +
+        '<div class="cover-blur" style="background-image:url(\'' + coverSrc + '\')"></div>' +
+        '<img src="' + coverSrc + '" alt="' + p.title + '" loading="lazy">' +
         '<span class="cat-badge">' + p.label + '</span>' +
         '<div class="project-overlay">' +
-          '<button class="ov-btn js-gallery" title="View gallery"><i class="fa-solid fa-images"></i></button>' +
+          (hasGallery ? '<button class="ov-btn js-gallery" title="View gallery"><i class="fa-solid fa-images"></i></button>' : '') +
         '</div></div>';
     } else {
       cover = '<div class="project-cover placeholder ' + (p.ph || 'ph-grad-1') + '">' +
@@ -158,7 +167,7 @@
       '<div class="project-body"><h3>' + p.title + '</h3><p>' + p.desc + '</p>' +
       '<div class="project-tags">' + tags + '</div>' + links + '</div>';
 
-    if (p.gallery && p.gallery.length && window.jQuery) {
+    if (hasGallery && window.jQuery) {
       var items = p.gallery.map(function (src) { return { src: src }; });
       var open = function (ev) {
         ev.preventDefault();
@@ -185,7 +194,8 @@
       btn.classList.add('active');
       var f = btn.getAttribute('data-filter');
       document.querySelectorAll('.project-card').forEach(function (c) {
-        c.classList.toggle('hide', !(f === 'all' || c.getAttribute('data-category') === f));
+        var cats = (c.getAttribute('data-category') || '').split(/\s+/);
+        c.classList.toggle('hide', !(f === 'all' || cats.indexOf(f) !== -1));
       });
     });
   });
@@ -241,9 +251,9 @@
     { k: ['full stack', 'fullstack', 'full-stack', 'backend', 'frontend'],
       a: "Yes — John Rey works <b>full-stack</b>: system development, design, and debugging across front-end and back-end. Front-end with Angular &amp; modern JS/TS, back-end with Laravel/PHP and Node.js." },
     { k: ['mobile', 'flutter', 'dart', 'android', 'ios', 'kotlin', 'native'],
-      a: "He builds <b>cross-platform and native mobile apps</b> — mainly with <b>Flutter &amp; Dart</b> (and Kotlin/Java for native Android). Examples: SeniorCare Connect and PlaySpace." },
+      a: "He builds <b>cross-platform and native mobile apps</b> — mainly with <b>Flutter &amp; Dart</b> (and Kotlin/Java for native Android). Examples: SeniorCare Connect, ZeusGym Fitness, and PlaySpace." },
     { k: ['project', 'work you', 'built', 'portfolio', 'apps', 'made', 'projects'],
-      a: "He's built 8 projects:<br>1. <b>GoodCatch</b> (Web/Next.js)<br>2. <b>Water Pipe Monitoring</b> (Web/IoT)<br>3. <b>SeniorCare Connect</b> (Mobile)<br>4. <b>Mailah Lite</b> (Web)<br>5. <b>Creative Dental</b> (Web)<br>6. <b>Wastage Reporting</b> (Web)<br>7. <b>E-Portal Requisition</b> (Web)<br>8. <b>PlaySpace</b> (Mobile)<br>See the <a href='#projects'>Work</a> section!" },
+      a: "He's built 9 projects:<br>1. <b>GoodCatch</b> (Web/Next.js)<br>2. <b>Wastage Reporting</b> (Web)<br>3. <b>E-Portal Requisition</b> (Web)<br>4. <b>PlaySpace</b> (Mobile)<br>5. <b>SeniorCare Connect</b> (Mobile)<br>6. <b>ZeusGym Fitness</b> (Mobile)<br>7. <b>Creative Dental</b> (Web)<br>8. <b>Mailah Lite</b> (Web)<br>9. <b>Water Pipe Monitoring</b> (Web &amp; Mobile)<br>See the <a href='#projects'>Work</a> section!" },
     { k: ['goodcatch', 'good catch'],
       a: "<b>GoodCatch</b> — a modern web e-commerce platform built with Next.js, featuring a responsive UI, fast performance, and a polished user experience." },
     { k: ['water', 'pipe', 'monitoring', 'iot'],
@@ -259,7 +269,9 @@
     { k: ['requisition', 'portal', 'e-portal', 'eportal', 'request'],
       a: "<b>E-Portal Requisition</b> — an online portal to submit, approve, and track requisitions via a structured workflow. PHP/Laravel &amp; MySQL." },
     { k: ['playspace', 'play space', 'sports', 'play'],
-      a: "<b>PlaySpace</b> — a Flutter mobile app to discover, book, and manage play &amp; sports spaces with maps and reservations." },
+      a: "<b>PlaySpace</b> — a Flutter mobile app for social life, chatting, and playing multiplayer games with friends and family." },
+    { k: ['zeus', 'zeusgym', 'zeus gym', 'fitness', 'workout'],
+      a: "<b>ZeusGym Fitness</b> — a Flutter mobile app for suggesting workouts and tracking fitness progress." },
     { k: ['experience', 'job', 'career', 'history', 'background', 'worked', 'work history'],
       a: "Experience:<br>\u2022 <b>Technical Support Specialist</b> @ LCC Groups (Oct 2025–present) — internal automation, system maintenance, user training, network/machine installs<br>\u2022 <b>Software Developer Trainee</b> (Jan–Jun 2025) — team web development &amp; QA<br>\u2022 <b>Sales &amp; Service Associate</b> (2023–2024)<br>\u2022 <b>Data Processor</b> (2022)<br>See the <a href='#experience'>Experience</a> section." },
     { k: ['current', 'currently', 'now', 'lcc', 'support', 'technical support'],
