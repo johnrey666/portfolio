@@ -127,7 +127,10 @@
       desc: 'Real-time monitoring system for water pipelines — dashboards, leak/flow alerts, and historical data tracking.',
       tags: ['Flutter', 'Dart', 'Firebase', 'Maps'],
       github: 'https://github.com/johnrey666/water_monitoring.git',
-      cover: 'images/portfolio/wmlogo.png', gallery: imgs('w', 'png', 14) }
+      cover: 'images/portfolio/wmlogo.png', gallery: imgs('w', 'png', 14) },
+    { title: 'FO Cost Calculator', category: 'web', label: 'web',
+      desc: 'A web-based cost calculator for estimating and breaking down FO-related expenses with a clear, interactive interface.',
+      tags: ['HTML', 'CSS', 'Javascript'], github: '', gallery: imgs('cc', 'png', 11) }
   ];
 
   var grid = document.getElementById('projects-grid');
@@ -253,7 +256,7 @@
     { k: ['mobile', 'flutter', 'dart', 'android', 'ios', 'kotlin', 'native'],
       a: "He builds <b>cross-platform and native mobile apps</b> — mainly with <b>Flutter &amp; Dart</b> (and Kotlin/Java for native Android). Examples: SeniorCare Connect, ZeusGym Fitness, and PlaySpace." },
     { k: ['project', 'work you', 'built', 'portfolio', 'apps', 'made', 'projects'],
-      a: "He's built 9 projects:<br>1. <b>GoodCatch</b> (Web/Next.js)<br>2. <b>Wastage Reporting</b> (Web)<br>3. <b>E-Portal Requisition</b> (Web)<br>4. <b>PlaySpace</b> (Mobile)<br>5. <b>SeniorCare Connect</b> (Mobile)<br>6. <b>ZeusGym Fitness</b> (Mobile)<br>7. <b>Creative Dental</b> (Web)<br>8. <b>Mailah Lite</b> (Web)<br>9. <b>Water Pipe Monitoring</b> (Web &amp; Mobile)<br>See the <a href='#projects'>Work</a> section!" },
+      a: "He's built 10 projects:<br>1. <b>GoodCatch</b> (Web/Next.js)<br>2. <b>Wastage Reporting</b> (Web)<br>3. <b>E-Portal Requisition</b> (Web)<br>4. <b>PlaySpace</b> (Mobile)<br>5. <b>SeniorCare Connect</b> (Mobile)<br>6. <b>ZeusGym Fitness</b> (Mobile)<br>7. <b>Creative Dental</b> (Web)<br>8. <b>Mailah Lite</b> (Web)<br>9. <b>Water Pipe Monitoring</b> (Web &amp; Mobile)<br>10. <b>FO Cost Calculator</b> (Web)<br>See the <a href='#projects'>Work</a> section!" },
     { k: ['goodcatch', 'good catch'],
       a: "<b>GoodCatch</b> — a modern web e-commerce platform built with Next.js, featuring a responsive UI, fast performance, and a polished user experience." },
     { k: ['water', 'pipe', 'monitoring', 'iot'],
